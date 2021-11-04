@@ -9,6 +9,7 @@ specifiers:
   eslint-config-next: 12.0.2
   framer-motion: ^5.0.2
   next: 12.0.2
+  next-themes: ^0.0.15
   postcss: ^8.3.11
   react: 17.0.2
   react-dom: 17.0.2
@@ -21,6 +22,7 @@ dependencies:
   '@tailwindcss/typography': 0.4.1_tailwindcss@2.2.19
   framer-motion: 5.0.2_react-dom@17.0.2+react@17.0.2
   next: 12.0.2_react-dom@17.0.2+react@17.0.2
+  next-themes: 0.0.15_c26ef06698b9ab1b17bf6451df0179c6
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-icons: 4.3.1_react@17.0.2
@@ -2401,6 +2403,18 @@ packages:
   /natural-compare/1.4.0:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
     dev: true
+
+  /next-themes/0.0.15_c26ef06698b9ab1b17bf6451df0179c6:
+    resolution: {integrity: sha512-LTmtqYi03c4gMTJmWwVK9XkHL7h0/+XrtR970Ujvtu3s0kZNeJN24aJsi4rkZOI8i19+qq6f8j+8Duwy5jqcrQ==}
+    peerDependencies:
+      next: '*'
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      next: 12.0.2_react-dom@17.0.2+react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
 
   /next/12.0.2_react-dom@17.0.2+react@17.0.2:
     resolution: {integrity: sha512-8YfNLK1pPYZzAhTB1EkaRdpT3KiRUlK8ad3gJOweeclAL7O5c96/GnrEZKMoSkpq1U0Lxa0qRf8ciUmzGfmDmA==}

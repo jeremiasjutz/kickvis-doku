@@ -48,36 +48,40 @@ const Project = ({ project }: { project: ProjectType }) => {
         variants={container}
         initial="hidden"
         animate="show"
-        className="pb-12 pl-24 pr-12"
+        className="fixed inset-0 pb-6 pl-24 pr-12 m-6 overflow-y-auto ring-1 ring-black md:pb-12 dark:ring-white"
       >
         <motion.div
           variants={title}
           transition={transition}
-          className="flex items-center p-12 -mx-12 border-b border-black "
+          className="flex items-center p-6 -mx-12 border-b border-black md:p-12 dark:border-white"
         >
           <Link href="/">
-            <a className="mr-6 text-4xl group">
-              <RiArrowLeftLine className="transition-transform group-hover:-translate-x-2" />
+            <a className="mr-3 text-3xl md:mr-6 sm:text-4xl md:text-5xl group">
+              <RiArrowLeftLine className="transition-transform dark:text-white group-hover:-translate-x-2" />
             </a>
           </Link>
-          <h1 className="text-5xl md:text-6xl">{project.name}</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl dark:text-white">
+            {project.name}
+          </h1>
         </motion.div>
         {project.text ? (
           <motion.article
             variants={title}
             transition={transition}
-            className="p-12 -mx-12 prose-lg border-b border-black md:prose-xl"
+            className="p-6 -mx-12 prose-lg border-b border-black md:p-12 dark:text-white dark:border-white md:prose-xl"
             dangerouslySetInnerHTML={{ __html: project.text }}
           />
         ) : null}
         <SRLWrapper>
-          <div className={`grid gap-12 ${project.cols} pt-12`}>
+          <div
+            className={`-mx-12 px-6 md:px-12 grid gap-6 md:gap-12 ${project.cols} pt-6 md:pt-12`}
+          >
             {project.images.map(({ url, alt }, i) => (
               <motion.img
                 variants={item}
                 transition={transition}
                 key={url}
-                className="border border-black cursor-pointer"
+                className="border border-black cursor-pointer dark:border-white"
                 src={url}
                 alt={alt}
               />
