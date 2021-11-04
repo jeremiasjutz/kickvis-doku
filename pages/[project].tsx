@@ -5,7 +5,7 @@ import { SRLWrapper } from 'simple-react-lightbox';
 import { RiArrowLeftLine } from 'react-icons/ri';
 import { motion, Variants } from 'framer-motion';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { Project as ProjectType } from '../projects';
+import projects, { Project as ProjectType } from '../projects';
 import { nameToSlug } from '../utils';
 
 const Project = ({ project }: { project: ProjectType }) => {
@@ -111,9 +111,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const projects: typeof Project[] = await (
-    await fetch('http://localhost:3000/api/getProjects')
-  ).json();
+  // const projects: typeof Project[] = await (
+  //   await fetch('http://localhost:3000/api/getProjects')
+  // ).json();
 
   const projectSlug = context.params?.project;
   const props = {

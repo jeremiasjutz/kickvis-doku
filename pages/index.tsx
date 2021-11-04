@@ -5,13 +5,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { nameToSlug } from '../utils';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { GetStaticProps } from 'next';
-import { Project } from '../projects';
+import projects, { Project } from '../projects';
 
 const getRand = (length: number) => {
   return Math.floor(Math.random() * length);
 };
 
-const Home = ({ projects }: { projects: Project[] }) => {
+const Home = () => {
   const [src, setSrc] = useState('');
 
   const imageRef = useRef<HTMLImageElement>(null);
@@ -96,14 +96,14 @@ const Home = ({ projects }: { projects: Project[] }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const projects: Project[] = await (
-    await fetch('http://localhost:3000/api/getProjects')
-  ).json();
+// export const getStaticProps: GetStaticProps = async () => {
+//   const projects: Project[] = await (
+//     await fetch('http://localhost:3000/api/getProjects')
+//   ).json();
 
-  return {
-    props: { projects },
-  };
-};
+//   return {
+//     props: { projects },
+//   };
+// };
 
 export default Home;
