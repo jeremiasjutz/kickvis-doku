@@ -60,7 +60,10 @@ const Home = () => {
       </Head>
       <div className="ml-12 ">
         {projects.map((project, i) => (
-          <div key={project.name} className="overflow-hidden">
+          <div
+            key={project.name}
+            className="overflow-hidden bg-white dark:bg-black"
+          >
             <Link href={nameToSlug(project.name)} passHref>
               <motion.a
                 variants={item}
@@ -68,13 +71,13 @@ const Home = () => {
                   setSrc(project.images[getRand(project.images.length)].url)
                 }
                 onMouseLeave={() => setSrc('')}
-                className="block p-12 text-4xl text-white transition-all w-[fit-content] duration-700 origin-left cursor-pointer mix-blend-difference md:text-5xl hover:font-bold"
+                className="z-20 relative  block p-12 text-4xl text-white transition-all w-[fit-content] duration-700 origin-left cursor-pointer mix-blend-difference md:text-5xl hover:font-bold"
               >
                 {project.name}
               </motion.a>
             </Link>
             {i === projects.length - 1 ? null : (
-              <div className="relative w-full border-b border-black dark:border-white z-[-2]" />
+              <div className="relative z-0 w-full border-b border-black dark:border-white" />
             )}
           </div>
         ))}
@@ -87,7 +90,7 @@ const Home = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             src={src}
-            className="z-[-1] absolute max-w-lg -translate-x-1/2 -translate-y-1/2 bg-white border border-black pointer-events-none dark:bg-black dark:border-white max-h-96"
+            className="absolute z-10 max-w-lg -translate-x-1/2 -translate-y-1/2 bg-white border border-black pointer-events-none dark:bg-black dark:border-white max-h-96"
           />
         ) : null}
       </AnimatePresence>
