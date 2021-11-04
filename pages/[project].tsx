@@ -94,9 +94,9 @@ const Project = ({ project }: { project: ProjectType }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const projects: typeof Project[] = await (
-    await fetch('http://localhost:3000/api/getProjects')
-  ).json();
+  // const projects: typeof Project[] = await (
+  //   await fetch('http://localhost:3000/api/getProjects')
+  // ).json();
   return {
     paths: projects.map(({ name }) => {
       const slug = nameToSlug(name);
