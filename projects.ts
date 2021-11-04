@@ -33,67 +33,67 @@ const projects: Project[] = [
     name: 'Figur / Grund',
     images: [
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 10.png',
+        url: '/images/figur-grund/ figur_grund_1.png',
         alt: 'Figur / Grund Versuch 1',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 11.png',
+        url: '/images/figur-grund/figur_grund_10.png',
         alt: 'Figur / Grund Versuch 2',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 12.png',
+        url: '/images/figur-grund/figur_grund_11.png',
         alt: 'Figur / Grund Versuch 3',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 13.png',
+        url: '/images/figur-grund/figur_grund_12.png',
         alt: 'Figur / Grund Versuch 4',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 14.png',
+        url: '/images/figur-grund/figur_grund_13.png',
         alt: 'Figur / Grund Versuch 5',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 15.png',
+        url: '/images/figur-grund/figur_grund_14.png',
         alt: 'Figur / Grund Versuch 6',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 2.png',
+        url: '/images/figur-grund/figur_grund_15.png',
         alt: 'Figur / Grund Versuch 7',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 3.png',
+        url: '/images/figur-grund/figur_grund_16.png',
         alt: 'Figur / Grund Versuch 8',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 4.png',
+        url: '/images/figur-grund/figur_grund_2.png',
         alt: 'Figur / Grund Versuch 9',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 5.png',
+        url: '/images/figur-grund/figur_grund_3.png',
         alt: 'Figur / Grund Versuch 10',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 6.png',
+        url: '/images/figur-grund/figur_grund_4.png',
         alt: 'Figur / Grund Versuch 11',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 7.png',
+        url: '/images/figur-grund/figur_grund_5.png',
         alt: 'Figur / Grund Versuch 12',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 8.png',
+        url: '/images/figur-grund/figur_grund_6.png',
         alt: 'Figur / Grund Versuch 13',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie 9.png',
+        url: '/images/figur-grund/figur_grund_7.png',
         alt: 'Figur / Grund Versuch 14',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1 Kopie.png',
+        url: '/images/figur-grund/figur_grund_8.png',
         alt: 'Figur / Grund Versuch 15',
       },
       {
-        url: '/images/figur-grund/figur_grund_Zeichenfläche 1 Kopie 2_Zeichenfläche 1.png',
+        url: '/images/figur-grund/figur_grund_9.png',
         alt: 'Figur / Grund Versuch 16',
       },
     ],
