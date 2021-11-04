@@ -73,7 +73,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                   return (
                     <div
                       key={name}
-                      className={`border-black flex items-center ${
+                      className={`border-black dark:border-white flex items-center ${
                         i === projects.length - 1 ? '' : 'border-b'
                       } ${i % 3 === 2 ? '' : 'md:border-r'}`}
                     >

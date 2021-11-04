@@ -7,7 +7,7 @@ export default class CustomDocument extends Document {
         <Head>
           <link
             rel="preload"
-            href="/fonts/ClashGrotesk-variable.woff2"
+            href="/fonts/Satoshi-variable.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
