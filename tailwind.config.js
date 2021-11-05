@@ -7,11 +7,10 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
     './getProjects.ts',
   ],
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     fontFamily: {
       sans: ['Satoshi', 'sans-serif'],
-      mono: ['Space Grotesk', 'monospace'],
     },
     extend: {
       colors: {

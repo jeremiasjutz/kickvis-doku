@@ -40,7 +40,7 @@ const Home = ({
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.05,
       },
     },
   };
@@ -57,26 +57,25 @@ const Home = ({
       </Head>
       <div className="ml-12 ">
         {projects.map((project, i) => (
-          <div
-            key={project.name}
-            className="overflow-hidden bg-white dark:bg-black"
-          >
-            <Link href={nameToSlug(project.name)} passHref>
-              <motion.a
-                variants={item}
-                onMouseEnter={() =>
-                  setSrc(
-                    project.images
-                      ? project.images[getRand(project.images.length)].url
-                      : ''
-                  )
-                }
-                onMouseLeave={() => setSrc('')}
-                className="relative block p-12 text-4xl transition-all w-[fit-content] duration-700 origin-left cursor-pointer  md:text-5xl hover:font-bold"
-              >
-                {project.name}
-              </motion.a>
-            </Link>
+          <div key={project.name} className="bg-white dark:bg-black">
+            <div className="w-full mx-auto overflow-hidden border-black dark:border-white max-w-7xl">
+              <Link href={nameToSlug(project.name)} passHref>
+                <motion.a
+                  variants={item}
+                  onMouseEnter={() =>
+                    setSrc(
+                      project.images
+                        ? project.images[getRand(project.images.length)].url
+                        : ''
+                    )
+                  }
+                  onMouseLeave={() => setSrc('')}
+                  className="relative block p-12 my-[0.3px] text-4xl transition-all w-[fit-content] duration-700 origin-left cursor-pointer  md:text-5xl hover:font-bold"
+                >
+                  {project.name}
+                </motion.a>
+              </Link>
+            </div>
             {i === projects.length - 1 ? null : (
               <div className="relative z-0 w-full border-b border-black dark:border-white" />
             )}

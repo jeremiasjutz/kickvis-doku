@@ -11,7 +11,9 @@ const Block = ({ children, noBorder = false }: BlockProps) => {
         noBorder ? '' : 'border-t'
       }`}
     >
-      <div className="w-full max-w-7xl">{children}</div>
+      <div className={`w-full border-black dark:border-white max-w-7xl`}>
+        {children}
+      </div>
     </section>
   );
 };

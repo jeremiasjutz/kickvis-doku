@@ -116,14 +116,14 @@ function MyApp({ Component, pageProps }: AppProps) {
                       <RiHomeLine />
                     </a>
                   </Link>
-                  <div className="grid w-12 place-items-center group ">
-                    <button
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                      className="flex justify-center text-lg transition-all duration-700 -rotate-90 rounded w-11 group-hover:font-semibold"
-                    >
+                  <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="grid w-12 h-full place-items-center group cursor pointer"
+                  >
+                    <div className="flex justify-center text-lg transition-all duration-700 -rotate-90 rounded w-11 group-hover:font-semibold">
                       {isMenuOpen ? 'schliessen' : 'menu'}
-                    </button>
-                  </div>
+                    </div>
+                  </button>
                   <DarkModeSwitcher />
                 </nav>
                 <AnimatePresence>
@@ -151,7 +151,12 @@ function MyApp({ Component, pageProps }: AppProps) {
                             <Link href={nameToSlug(name)} passHref>
                               <motion.a
                                 variants={item}
-                                onClick={() => setIsMenuOpen(false)}
+                                onClick={() => {
+                                  scrollContainerRef.current?.scrollTo({
+                                    top: 0,
+                                  });
+                                  setIsMenuOpen(false);
+                                }}
                                 className={`hyphens px-12 py-6 text-2xl md:text-3xl transition-colors duration-700 origin-left  hover:text-indigo-500`}
                               >
                                 {name}
