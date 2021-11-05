@@ -4,7 +4,7 @@ import Link from 'next/link';
 import SimpleReactLightbox from 'simple-react-lightbox';
 import { RiHomeLine } from 'react-icons/ri';
 import { ThemeProvider } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, Tween } from 'framer-motion';
 
 import type { AppProps } from 'next/app';
@@ -41,6 +41,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     show: { opacity: 1, x: 0, transition: { type: 'spring', duration: 1 } },
   };
 
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
@@ -68,75 +70,85 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class" defaultTheme="light">
       <SimpleReactLightbox>
-        {isLoading ? (
-          <div className="fixed inset-0 grid place-items-center">
-            <div className="w-full text-center">
-              <p className="text-xl font-medium">
-                Inhalte laden{' '}
-                <span className="tabular-nums">
-                  {Math.round(progress * 100)}%
-                </span>
-              </p>
-              <div className="w-1/2 mx-auto mt-4">
-                <div
-                  className="w-full h-[2px] transition-transform origin-left bg-black dark:bg-white"
-                  style={{ transform: `scaleX(${progress})` }}
-                ></div>
+        <main
+          ref={scrollContainerRef}
+          className="fixed inset-0 overflow-y-auto bg-white md:inset-6 ring-1 ring-black dark:bg-black dark:ring-white"
+        >
+          {isLoading ? (
+            <div className="fixed grid inset-6 place-items-center">
+              <div className="w-full text-center">
+                <p className="text-xl font-medium">
+                  Inhalte laden{' '}
+                  <span className="tabular-nums">
+                    {Math.round(progress * 100)}%
+                  </span>
+                </p>
+                <div className="w-1/2 mx-auto mt-4">
+                  <div
+                    className="w-full h-[2px] transition-transform origin-left bg-black dark:bg-white"
+                    style={{ transform: `scaleX(${progress})` }}
+                  ></div>
+                </div>
               </div>
             </div>
-          </div>
-        ) : (
-          <AnimatePresence exitBeforeEnter>
-            <Link href="/" passHref>
-              <a className="fixed z-30 grid w-[calc(3rem-1px)] h-12 text-white border-b border-white cursor-pointer mix-blend-difference place-items-center top-6 left-6">
-                <RiHomeLine />
-              </a>
-            </Link>
-            <div className="fixed inset-y-0 left-0 z-20 grid items-center w-12 my-6 ml-6 border-r border-white group mix-blend-difference">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="flex justify-center text-lg text-white transition-all duration-700 -rotate-90 rounded w-11 group-hover:font-semibold"
-              >
-                {isMenuOpen ? 'schliessen' : 'menu'}
-              </button>
-            </div>
-            <DarkModeSwitcher />
-            <AnimatePresence>
-              {isMenuOpen ? (
-                <motion.div
-                  key="child"
-                  variants={container}
-                  initial="hidden"
-                  animate="show"
-                  exit="hidden"
-                  className="fixed inset-0 z-10 grid pl-12 m-6 overflow-y-auto text-black bg-white ring-1 ring-black dark:text-white dark:bg-black md:grid-cols-3 dark:ring-white"
-                >
-                  {projects.map(({ name }: Project, i) => {
-                    return (
-                      <div
-                        key={name}
-                        className={`border-black dark:border-white flex items-center ${
-                          i === projects.length - 1 ? '' : 'border-b'
-                        } ${i % 3 === 2 ? '' : 'md:border-r'}`}
-                      >
-                        <Link href={nameToSlug(name)} passHref>
-                          <motion.a
-                            variants={item}
-                            onClick={() => setIsMenuOpen(false)}
-                            className={`px-12 py-6 text-3xl transition-colors duration-700 origin-left  hover:text-indigo-500`}
-                          >
-                            {name}
-                          </motion.a>
-                        </Link>
-                      </div>
-                    );
-                  })}
-                </motion.div>
-              ) : null}
+          ) : (
+            <AnimatePresence exitBeforeEnter>
+              <nav className="fixed inset-0 left-0 z-30 flex flex-col justify-between w-12 text-white border-r border-white md:inset-y-6 md:left-6 mix-blend-difference ">
+                <Link href="/" passHref>
+                  <a className="grid w-full h-12 border-b cursor-pointer place-items-center">
+                    <RiHomeLine />
+                  </a>
+                </Link>
+                <div className="grid w-12 place-items-center group ">
+                  <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="flex justify-center text-lg transition-all duration-700 -rotate-90 rounded w-11 group-hover:font-semibold"
+                  >
+                    {isMenuOpen ? 'schliessen' : 'menu'}
+                  </button>
+                </div>
+                <DarkModeSwitcher />
+              </nav>
+              <AnimatePresence>
+                {isMenuOpen ? (
+                  <motion.div
+                    key="child"
+                    variants={container}
+                    initial="hidden"
+                    animate="show"
+                    exit="hidden"
+                    className="fixed inset-0 z-30 grid ml-12 overflow-y-auto text-black bg-white md:inset-6 ring-1 ring-black dark:text-white dark:bg-black md:grid-cols-3 dark:ring-white"
+                  >
+                    {projects.map(({ name }: Project, i) => {
+                      return (
+                        <div
+                          key={name}
+                          className={`border-black dark:border-white flex items-center ${
+                            i === projects.length - 1 ? '' : 'border-b'
+                          } ${i % 3 === 2 ? '' : 'md:border-r'}`}
+                        >
+                          <Link href={nameToSlug(name)} passHref>
+                            <motion.a
+                              variants={item}
+                              onClick={() => setIsMenuOpen(false)}
+                              className={`px-12 py-6 text-3xl transition-colors duration-700 origin-left  hover:text-indigo-500`}
+                            >
+                              {name}
+                            </motion.a>
+                          </Link>
+                        </div>
+                      );
+                    })}
+                  </motion.div>
+                ) : null}
+              </AnimatePresence>
+              <Component
+                {...pageProps}
+                scrollContainerRef={scrollContainerRef}
+              />
             </AnimatePresence>
-            <Component {...pageProps} />
-          </AnimatePresence>
-        )}
+          )}
+        </main>
       </SimpleReactLightbox>
     </ThemeProvider>
   );

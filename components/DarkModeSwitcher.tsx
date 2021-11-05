@@ -5,7 +5,7 @@ export default function DarkModeSwitcher() {
   const { theme, setTheme } = useTheme();
   return (
     <button
-      className="fixed z-30 grid w-[calc(3rem-1px)] h-12 text-white border-t border-white cursor-pointer mix-blend-difference place-items-center bottom-6 left-6"
+      className="grid w-full h-12 border-t cursor-pointer place-items-center"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
       {theme === 'light' ? <RiMoonClearLine /> : <RiSunLine />}

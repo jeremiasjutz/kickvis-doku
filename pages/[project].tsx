@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import { RefObject, useEffect, useMemo, useState } from 'react';
 import { SRLWrapper } from 'simple-react-lightbox';
 import { RiArrowLeftLine } from 'react-icons/ri';
 import { motion, Variants } from 'framer-motion';
@@ -8,7 +9,13 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import projects, { Project as ProjectType } from '../projects';
 import { nameToSlug } from '../utils';
 
-const Project = ({ project }: { project: ProjectType }) => {
+const Project = ({
+  project,
+  scrollContainerRef,
+}: {
+  project: ProjectType;
+  scrollContainerRef: RefObject<HTMLDivElement>;
+}) => {
   const container: Variants = {
     hidden: { opacity: 0 },
     show: {
@@ -39,16 +46,21 @@ const Project = ({ project }: { project: ProjectType }) => {
     type: 'spring',
     duration: 1,
   };
+
+  useEffect(() => {
+    scrollContainerRef.current?.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <>
       <Head>
         <title>{project.name}</title>
       </Head>
-      <motion.main
+      <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        className="fixed inset-0 pb-6 pl-24 pr-12 m-6 overflow-y-auto ring-1 ring-black md:pb-12 dark:ring-white"
+        className="pb-6 pl-24 pr-12 md:pb-12"
       >
         <motion.div
           variants={title}
@@ -88,7 +100,7 @@ const Project = ({ project }: { project: ProjectType }) => {
             ))}
           </div>
         </SRLWrapper>
-      </motion.main>
+      </motion.div>
     </>
   );
 };

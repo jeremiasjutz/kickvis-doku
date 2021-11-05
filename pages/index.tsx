@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 
 import projects from '../projects';
 import { nameToSlug } from '../utils';
@@ -10,21 +10,25 @@ const getRand = (length: number) => {
   return Math.floor(Math.random() * length);
 };
 
-const Home = () => {
+const Home = ({
+  scrollContainerRef,
+}: {
+  scrollContainerRef: RefObject<HTMLDivElement>;
+}) => {
   const [src, setSrc] = useState('');
 
   const imageRef = useRef<HTMLImageElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   const move = useCallback((e: MouseEvent) => {
-    if (imageRef.current && containerRef.current) {
+    if (imageRef.current && scrollContainerRef.current) {
       imageRef.current.style.top =
-        e.pageY + containerRef.current.scrollTop + 'px';
+        e.pageY + scrollContainerRef.current.scrollTop + 'px';
       imageRef.current.style.left = e.pageX + 'px';
     }
   }, []);
 
   useEffect(() => {
+    scrollContainerRef.current?.scrollTo({ top: 0 });
     window.addEventListener('mousemove', move);
     return () => {
       window.removeEventListener('mousemove', move);
@@ -47,13 +51,7 @@ const Home = () => {
   };
 
   return (
-    <motion.main
-      variants={container}
-      initial="hidden"
-      animate="show"
-      ref={containerRef}
-      className="fixed inset-0 m-6 overflow-y-auto bg-white ring-1 ring-black dark:bg-black dark:ring-white"
-    >
+    <motion.div variants={container} initial="hidden" animate="show">
       <Head>
         <title>Kursdokumentation KICKVIS</title>
       </Head>
@@ -94,18 +92,8 @@ const Home = () => {
           />
         ) : null}
       </AnimatePresence>
-    </motion.main>
+    </motion.div>
   );
 };
-
-// export const getStaticProps: GetStaticProps = async () => {
-//   const projects: Project[] = await (
-//     await fetch('http://localhost:3000/api/getProjects')
-//   ).json();
-
-//   return {
-//     props: { projects },
-//   };
-// };
 
 export default Home;
