@@ -11,6 +11,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Satoshi', 'sans-serif'],
+      mono: ['Space Grotesk', 'monospace'],
     },
     extend: {
       colors: {

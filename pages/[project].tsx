@@ -8,6 +8,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 
 import projects, { Project as ProjectType } from '../projects';
 import { nameToSlug } from '../utils';
+import Block from '../components/Block';
 
 const Project = ({
   project,
@@ -60,46 +61,63 @@ const Project = ({
         variants={container}
         initial="hidden"
         animate="show"
-        className="pb-6 pl-24 pr-12 md:pb-12"
+        className="ml-12"
       >
-        <motion.div
-          variants={title}
-          transition={transition}
-          className="flex items-center p-6 -mx-12 border-b border-black md:p-12 dark:border-white"
-        >
-          <Link href="/">
-            <a className="mr-3 text-3xl md:mr-6 sm:text-4xl md:text-5xl group">
-              <RiArrowLeftLine className="transition-transform dark:text-white group-hover:-translate-x-2" />
-            </a>
-          </Link>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl dark:text-white">
-            {project.name}
-          </h1>
-        </motion.div>
-        {project.text ? (
-          <motion.article
+        <Block noBorder>
+          <motion.div
             variants={title}
             transition={transition}
-            className="p-6 -mx-12 prose-lg border-b border-black md:p-12 dark:text-white dark:border-white md:prose-xl"
-            dangerouslySetInnerHTML={{ __html: project.text }}
-          />
-        ) : null}
-        <SRLWrapper>
-          <div
-            className={`-mx-12 px-6 md:px-12 grid gap-6 md:gap-12 ${project.cols} pt-6 md:pt-12`}
+            className="flex items-center p-6 md:p-12"
           >
-            {project.images?.map(({ url, alt }, i) => (
-              <motion.img
-                variants={item}
-                transition={transition}
-                key={url}
-                className="border border-black cursor-pointer dark:border-white"
-                src={url}
-                alt={alt}
-              />
-            ))}
-          </div>
-        </SRLWrapper>
+            <Link href="/">
+              <a className="mr-3 text-3xl md:mr-6 sm:text-4xl group">
+                <RiArrowLeftLine className="transition-transform dark:text-white group-hover:-translate-x-2" />
+              </a>
+            </Link>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl dark:text-white">
+              {project.name}
+            </h1>
+          </motion.div>
+        </Block>
+        {project.text ? (
+          <Block>
+            <motion.article
+              variants={title}
+              transition={transition}
+              className="p-6 prose-lg md:p-12 dark:text-white md:prose-xl"
+              dangerouslySetInnerHTML={{ __html: project.text }}
+            />
+          </Block>
+        ) : null}
+        {project.images ? (
+          <Block>
+            <SRLWrapper
+              options={{
+                buttons: {
+                  showAutoplayButton: false,
+                  showDownloadButton: false,
+                  showThumbnailsButton: false,
+                  showFullscreenButton: false,
+                },
+              }}
+            >
+              <div
+                className={`p-6 md:p-12 grid gap-6 lg:gap-12 ${project.cols} pt-6 md:pt-12`}
+              >
+                {project.images.map(({ url, alt }, i) => (
+                  <motion.img
+                    variants={item}
+                    transition={transition}
+                    key={url}
+                    className="border border-black cursor-pointer dark:border-white"
+                    src={url}
+                    alt={alt}
+                  />
+                ))}
+              </div>
+            </SRLWrapper>
+          </Block>
+        ) : null}
       </motion.div>
     </>
   );

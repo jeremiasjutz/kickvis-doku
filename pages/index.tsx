@@ -65,10 +65,14 @@ const Home = ({
               <motion.a
                 variants={item}
                 onMouseEnter={() =>
-                  setSrc(project.images[getRand(project.images.length)].url)
+                  setSrc(
+                    project.images
+                      ? project.images[getRand(project.images.length)].url
+                      : ''
+                  )
                 }
                 onMouseLeave={() => setSrc('')}
-                className="z-20 relative  block p-12 text-4xl text-white transition-all w-[fit-content] duration-700 origin-left cursor-pointer mix-blend-difference md:text-5xl hover:font-bold"
+                className="relative block p-12 text-4xl transition-all w-[fit-content] duration-700 origin-left cursor-pointer  md:text-5xl hover:font-bold"
               >
                 {project.name}
               </motion.a>
@@ -88,7 +92,7 @@ const Home = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             src={src}
-            className="absolute z-10 max-w-lg -translate-x-1/2 -translate-y-1/2 bg-white border border-black pointer-events-none dark:bg-black dark:border-white max-h-96"
+            className="absolute z-10 max-w-lg -translate-x-1/2 -translate-y-1/2 bg-white border border-black pointer-events-none dark:bg-black dark:border-white max-h-96 mix-blend-difference invert dark:invert-0"
           />
         ) : null}
       </AnimatePresence>
