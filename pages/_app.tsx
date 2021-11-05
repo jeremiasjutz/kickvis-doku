@@ -53,7 +53,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         const img = new Image();
         img.src = src;
         img.onload = (e) => {
-          setProgress((i + 1) / arr.length);
+          const newProgress = (i + 1) / arr.length;
+          newProgress > progress && setProgress(newProgress);
           resolve(e);
         };
         img.onerror = reject;
@@ -86,7 +87,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         ) : (
           <AnimatePresence exitBeforeEnter>
             <Link href="/" passHref>
-              <a className="fixed z-30 grid w-12 h-12 text-white border-b border-white cursor-pointer mix-blend-difference place-items-center top-6 left-6">
+              <a className="fixed z-30 grid w-[calc(3rem-1px)] h-12 text-white border-b border-white cursor-pointer mix-blend-difference place-items-center top-6 left-6">
                 <RiHomeLine />
               </a>
             </Link>
@@ -102,6 +103,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <AnimatePresence>
               {isMenuOpen ? (
                 <motion.div
+                  key="child"
                   variants={container}
                   initial="hidden"
                   animate="show"

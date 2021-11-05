@@ -85,6 +85,7 @@ const Home = () => {
       <AnimatePresence>
         {src !== '' ? (
           <motion.img
+            key="childImage"
             ref={imageRef}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
