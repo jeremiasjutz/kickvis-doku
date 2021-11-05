@@ -2,15 +2,16 @@ import '../styles/tailwind.css';
 
 import Link from 'next/link';
 import SimpleReactLightbox from 'simple-react-lightbox';
+import { RiHomeLine } from 'react-icons/ri';
+import { ThemeProvider } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { AnimatePresence, motion, Inertia, Tween } from 'framer-motion';
+import { AnimatePresence, motion, Tween } from 'framer-motion';
+
 import type { AppProps } from 'next/app';
 
 import projects, { Project } from '../projects';
-import { nameToSlug } from '../utils';
-import { ThemeProvider, useTheme } from 'next-themes';
 import DarkModeSwitcher from '../components/DarkModeSwitcher';
-import { RiHomeLine, RiLoader2Line, RiLoaderLine } from 'react-icons/ri';
+import { nameToSlug } from '../utils';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const springConfig: Tween = {

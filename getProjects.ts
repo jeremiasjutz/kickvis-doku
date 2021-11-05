@@ -1,19 +1,21 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'fs';
-import { Project } from '../../projects';
+import { readdirSync, writeFileSync } from 'fs';
+import { Project } from './projects';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+const getProjects = () => {
+  const readDir = (url: string, imageAlt: string) =>
+    readdirSync(url)
+      .filter((filename: string) => filename !== '.DS_Store')
+      .map((filename: string, i: number) => ({
+        url: `${url.replace('./public', '')}/${filename}`,
+        alt: `${imageAlt} ${i + 1}`,
+      }));
   const projects: Project[] = [
     {
       name: 'Komposition mit Kreisen',
-      images: fs
-        .readdirSync('./public/images/komposition-mit-kreisen')
-        .filter((url) => url !== '.DS_Store')
-        .map((url, i) => ({
-          url: `/images/komposition-mit-kreisen/${url}`,
-          alt: `Komposition mit Kreisen Versuch ${i + 1}`,
-        })),
+      images: readDir(
+        './public/images/komposition-mit-kreisen',
+        'Komposition mit Kreisen Versuch'
+      ),
       text: `
         <h3>Nah und Fern</h3>
         <p>Blabvlabsdfksjflkjdsfls Loremsfsdfjksdfl ls djflksdjl sdl kjf södflkjaösldfk sölkjasöldkfj ölsdkfj </p>
@@ -21,13 +23,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     },
     {
       name: 'Figur / Grund',
-      images: fs
-        .readdirSync('./public/images/figur-grund')
-        .filter((url) => url !== '.DS_Store')
-        .map((url, i) => ({
-          url: `/images/figur-grund/${url}`,
-          alt: `Figur / Grund Versuch ${i + 1}`,
-        })),
+      images: readDir('./public/images/figur-grund', 'Figur / Grund Versuch'),
       cols: 'grid-cols-2 md:grid-cols-4',
       text: `
         <h3>Projektbeschrieb</h3>
@@ -44,7 +40,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     },
     {
       name: 'Form - Schriftvergleich',
-      images: [{ url: '/images/form-schriftvergleich/plakat.jpg', alt: 'alt' }],
+      images: [
+        {
+          url: '/images/form-schriftvergleich/plakat.jpg',
+          alt: 'Form - Schriftvergleich',
+        },
+      ],
       text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
     },
     {
@@ -109,13 +110,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     },
     {
       name: 'SKETCH 4 "Figur"',
-      images: fs
-        .readdirSync('./public/images/sketch-4-figur')
-        .filter((url) => url !== '.DS_Store')
-        .map((url, i) => ({
-          url: `/images/sketch-4-figur/${url}`,
-          alt: `Sketch 4 Versuch ${i + 1}`,
-        })),
+      images: readDir('./public/images/sketch-4-figur', 'Sketch 4 Versuch'),
       cols: 'md:grid-cols-2',
       text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
     },
@@ -136,5 +131,20 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     },
   ];
 
-  res.status(200).json(projects);
-}
+  writeFileSync(
+    './projects.ts',
+    `
+    const projects = ${JSON.stringify(projects)};
+
+    export type Project = {
+      name: string;
+      images?: { url: string; alt: string }[];
+      text?: string;
+      cols?: string;
+    };
+
+    export default projects;`
+  );
+};
+
+getProjects();

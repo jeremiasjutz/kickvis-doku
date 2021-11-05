@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import { SRLWrapper } from 'simple-react-lightbox';
-
 import { RiArrowLeftLine } from 'react-icons/ri';
 import { motion, Variants } from 'framer-motion';
 import { GetStaticPaths, GetStaticProps } from 'next';
+
 import projects, { Project as ProjectType } from '../projects';
 import { nameToSlug } from '../utils';
 
@@ -76,7 +76,7 @@ const Project = ({ project }: { project: ProjectType }) => {
           <div
             className={`-mx-12 px-6 md:px-12 grid gap-6 md:gap-12 ${project.cols} pt-6 md:pt-12`}
           >
-            {project.images.map(({ url, alt }, i) => (
+            {project.images?.map(({ url, alt }, i) => (
               <motion.img
                 variants={item}
                 transition={transition}
@@ -94,9 +94,6 @@ const Project = ({ project }: { project: ProjectType }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // const projects: typeof Project[] = await (
-  //   await fetch('http://localhost:3000/api/getProjects')
-  // ).json();
   return {
     paths: projects.map(({ name }) => {
       const slug = nameToSlug(name);
@@ -111,10 +108,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  // const projects: typeof Project[] = await (
-  //   await fetch('http://localhost:3000/api/getProjects')
-  // ).json();
-
   const projectSlug = context.params?.project;
   const props = {
     project: projects.find(

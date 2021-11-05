@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import { AnimatePresence, motion } from 'framer-motion';
-
-import { nameToSlug } from '../utils';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { GetStaticProps } from 'next';
-import projects, { Project } from '../projects';
+
+import projects from '../projects';
+import { nameToSlug } from '../utils';
 
 const getRand = (length: number) => {
   return Math.floor(Math.random() * length);

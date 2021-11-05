@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "getProjects": "tsc getProjects.ts && node getProjects && rm -rf getProjects.js && rm -rf projects.js"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.4.1",
