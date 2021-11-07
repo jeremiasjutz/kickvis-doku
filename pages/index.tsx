@@ -91,7 +91,7 @@ const Home = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             src={src}
-            className="absolute z-10 max-w-lg -translate-x-1/2 -translate-y-1/2 bg-white border border-black pointer-events-none dark:bg-black dark:border-white max-h-96 mix-blend-difference invert dark:invert-0"
+            className="absolute z-10 max-w-lg -translate-x-1/2 -translate-y-1/2 bg-white border border-black pointer-events-none left-1/2 top-1/2 dark:bg-black dark:border-white max-h-96 mix-blend-difference invert dark:invert-0"
           />
         ) : null}
       </AnimatePresence>

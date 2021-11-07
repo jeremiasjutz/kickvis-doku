@@ -60,8 +60,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           const img = new Image();
           img.src = src;
           img.onload = (e) => {
-            const newProgress = (i + 1) / arr.length;
-            newProgress > progress && setProgress(newProgress);
+            if ((i + 1) % 5 === 0) {
+              const newProgress = (i + 1) / arr.length;
+              newProgress > progress && setProgress(newProgress);
+            }
             resolve(e);
           };
           img.onerror = reject;
@@ -113,7 +115,10 @@ function MyApp({ Component, pageProps }: AppProps) {
               <>
                 <nav className="fixed inset-0 left-0 flex flex-col justify-between w-12 bg-white border-r border-black dark:border-white dark:bg-black md:inset-y-6 md:left-6 ">
                   <Link href="/" passHref>
-                    <a className="grid w-full h-12 border-b border-black cursor-pointer dark:border-white place-items-center" onClick={()=>setIsMenuOpen(false)}>
+                    <a
+                      className="grid w-full h-12 border-b border-black cursor-pointer dark:border-white place-items-center"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
                       <RiHomeLine />
                     </a>
                   </Link>
