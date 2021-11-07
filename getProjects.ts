@@ -5,6 +5,9 @@ const getProjects = () => {
   const readDir = (url: string, imageAlt: string) =>
     readdirSync(url)
       .filter((filename: string) => filename !== '.DS_Store')
+      .sort((a, b) => {
+        return +a.replace(/\D+/g, '') - +b.replace(/\D+/g, '');
+      })
       .map((filename: string, i: number) => ({
         url: `${url.replace('./public', '')}/${filename}`,
         alt: `${imageAlt} ${i + 1}`,
@@ -57,7 +60,7 @@ const getProjects = () => {
       text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
     },
     {
-      name: 'Input Wahrnehmung',
+      name: 'Notizen Input Wahrnehmung',
       text: `
       <h3>Visuelle Wahrnehmung</h3>
       <p>Der Mensch versucht immer etwas symmetrisches oder bekanntes zu sehen. So reagiert er zum Beispiel schneller auf ein Bild oder Objekt welches Gesichts ähnliche Formen enthält. Weiter braucht es Begrenzungen, um eine Form als solche zu erkennen. Im Beispiel mit dem “WIN” Schriftzug wird erst klar was da steht, wenn man links und rechts die Begrenzung sieht.
@@ -94,15 +97,19 @@ const getProjects = () => {
     {
       name: 'Farbenlehre',
       images: readDir('./public/images/farbenlehre', 'Farbenlehre Versuch'),
+      cols: 'md:grid-cols-2',
       text: `
         <h3>Projektbeschrieb</h3>
-        <p>In diesem Projekt mussten wir eine einzige Farbe auf verschiedenen Hintergründen, unterschiedlich wirken lassen.</p>
+        <p>In diesem Projekt mussten wir eine einzige Farbe auf verschiedenen Hintergründen, unterschiedlich wirken lassen. In einem zweiten Schritt
+        mussten wir zwei Farben auf zwei verschiedenen Hintergründen gleich wirken lassen.</p>
 
         <h3>Vorgehensweise</h3>
         <p>Zuerst habe ich die Vordergrundsfarbe gewählt, die ich später auf den Hintergründen platzieren möchte. Danach habe ich das ganze so
         auf einem Artboard platziert, dass ich zwei hälften mit unterschiedlicher Hintergrundsfarben habe. Auf diesen beiden Hälften
         habe ich dann jeweils die Vordergrundsfarbe als kleines Quadrat platziert. Nun musste ich nur noch mit den Hintergrundsfarben
-        rumprobieren, bis die Vordergrundsfarbe unterschiedlich aussieht.</p>
+        rumprobieren, bis die Vordergrundsfarbe unterschiedlich aussieht.<br>
+        Auch für den zweiten Auftrag habe ich hier wieder die beiden hälften mit je einem farbigen Quadrat eingerichtet. Von hier aus musste ich nun einfach rumpröbeln,
+        bis die beiden Vordergrundsfarben gleich wirkten.</p>
       `,
     },
     {
@@ -110,11 +117,11 @@ const getProjects = () => {
       images: readDir('./public/images/farbe-mood', 'Farbe (mood) Versuch'),
       text: `
       <h3>Projektbeschrieb</h3>
-      <p>Dieses Projekt ist sehr ähnlich wie das «Farbenlehre» Projekt. Hier muss aber die Vordergrundsfarbe unterschiedlich sein, jedoch gleich wirken.</p>
+      <p>Dieses Projekt ist ähnlich wie das «Farbenlehre» Projekt. Hier mussten wir aber vier Farben wählen und damit vier verschiedene Stimmungen kreieren.</p>
 
       <h3>Vorgehensweise</h3>
-      <p>Zuerst habe ich hier wieder die beiden hälften mit je einem farbigen Quadrat eingerichtet. Von hier aus musste ich nun einfach rumpröbeln,
-      bis die Vordergrundsfarbe gleich wirkt.</p>
+      <p>Zuerst habe ich ein Layout mit vier Rechtecken gemacht und diese dann eingefärbt. Danach habe ich 3 Kopien davon gemacht und die Farben gewechselt,
+      damit eine neue Stimmung entsteht. Für weitere entwürfe habe ich dasselbe gemacht, einfach das Layout zu beginn angepasst.</p>
       `,
     },
     {
@@ -123,6 +130,7 @@ const getProjects = () => {
         './public/images/vorstellen-grundlage-buecher',
         'Methodik der Form- und Bildgestaltung Folie'
       ),
+      cols: 'md:grid-cols-2',
       text: `
       <h3>Projektbeschrieb</h3>
       <p>Wir mussten in zweier Gruppen eines von verschiedenen Grundlage Büchern vorstellen. Unser Buch war «Methodik der Form- und Bildgestaltung» von Armin Hofmann</p>
@@ -151,6 +159,7 @@ const getProjects = () => {
         './public/images/sketch-2-raum-perspektive',
         'SKETCH 2 «Raum Perspektive» Versuch'
       ),
+      cols: 'md:grid-cols-2',
       text: `
         <h3>Projektbeschrieb</h3>
         <p>Bei diesem Projekt ging es darum, einen Raum mit korrekter Perspektive abzuzeichnen.</p>
@@ -666,11 +675,18 @@ const getProjects = () => {
       `,
     },
     {
+      name: 'Notizen Bildbetrachtung, Bildanalyse, Semiotik',
+      text: `
+
+      `,
+    },
+    {
       name: 'Plakatvergleich',
       images: readDir(
         './public/images/plakatvergleich',
         'Plakatvergleich Seite'
       ),
+      cols: 'md:grid-cols-2',
       text: `
         <h3>Projektbeschrieb</h3>
         <p>Nach unserem Ausflug an die Weltformat Ausstellung, mussten wir zwei der dort ausgestellten Plakate auswählen und vergleichen</p>
@@ -680,15 +696,16 @@ const getProjects = () => {
       `,
     },
     {
-      name: 'SKETCH 3 "Kopf"',
+      name: 'SKETCH 3 «Kopf»',
       images: [{ url: '/sketch1.png', alt: 'alt' }],
       text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
     },
     {
-      name: 'Bildcollage "match cut"',
+      name: 'Bildcollage «match cut»',
       images: [{ url: '/sketch1.png', alt: 'alt' }],
       text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
     },
+    { name: 'Notizen Input Entwurfsprozesse', text: '' },
     {
       name: 'Bild im Raster',
       images: readDir(
@@ -705,29 +722,73 @@ const getProjects = () => {
       `,
     },
     {
-      name: 'Bildwelten "Arbeit"',
-      images: [{ url: '/sketch1.png', alt: 'alt' }],
-      text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
+      name: 'CD Vergleich Vortrag',
+      images: readDir(
+        './public/images/cd-vergleich-vortrag',
+        'Airbnb vs. Booking.com Folie'
+      ),
+      cols: 'md:grid-cols-2',
+      text: `
+        <h3>Projektbeschrieb</h3>
+        <p>Wie beim Grundlagen Buch Vortrag, mussten wir auch hier in zweier Teams zwei Corporate Designs vergleichen. Unser Vortrag hat die zwei CDs von Airbnb und Booking.com verglichen.</p>
+      `,
     },
     {
-      name: 'SKETCH 4 "Figur"',
+      name: 'Bildwelten «Arbeit»',
+      images: readDir('./public/images/bildwelten-arbeit', 'Bildwelten Arbeit'),
+      cols: 'md:grid-cols-2',
+      text: `
+      <h3>Projektbeschrieb</h3>
+      <p>Basierend auf den CD Vergleich Vorträgen, haben wir uns in diesem Projekt mit Bildwelten beschäftigt.</p>
+
+      <h3>Vorgehensweise</h3>
+      <p>Wir haben viele Bilder von arbeitenden Personen gesucht und am Boden ausgelegt. Danach konnten wir die Bilder nach vielen verschiedenen Kriterien sortieren
+      und überlegen, ob einige vielleicht passend für das CD einiger Firmen wären.</p>
+    `,
+    },
+    {
+      name: 'SKETCH 4 «Figur»',
       images: readDir('./public/images/sketch-4-figur', 'Sketch 4 Versuch'),
       cols: 'md:grid-cols-2',
+      text: `
+        <h3>Projektbeschrieb</h3>
+        <p>Bei diesem Projekt stand eine Person der Klasse in der Mitte eines Kreises. Die anderen mussten versuchen die Person möglichst genau abzuzeichnen.</p>
+
+        <h3>Vorgehensweise</h3>
+        <p>Zuerst habe ich die dominanten Linien und die Proportionen gezeichnet. Danach konnte man
+        Details hinzufügen. In einem weiteren Schritt haben wir die Zeichnung mit einer Zeitlimite von 90 Sekunden gemacht.
+        </p>
+      `,
+    },
+    {
+      name: 'SKETCH 5 «imagine observe remember»',
+      images: readDir(
+        './public/images/sketch-5-imagine-observe-remember',
+        'Sketch 5 Versuch'
+      ),
+      cols: 'md:grid-cols-2',
+      text: `
+      <h3>Projektbeschrieb</h3>
+      <p>Hier mussten wir unsere Küche aus dem Gedächtnis zeichnen. Dies mussten wir drei Mal auf drei verschiedene Arten machen.</p>
+
+      <h3>Vorgehensweise</h3>
+      <p>In der ersten Variante war uns frei gestellt, wie wir die Küche zeichnen wollten. Einzig das Format war vorgegeben.
+      Es musste nämlich innerhalb der Form eines Smarphones gezeichnet werden.<br>
+      In der zweiten Variante war die Vorgabe, dass wir die Küche aus dem Blickwinkel eines Insektes irgendwo in der Küche zeichen mussten.<br>
+      In der letzten Variante mussten wir unsere Traumküche oder Küche der Zukunft zeichnen.
+      </p>
+    `,
+    },
+    {
+      name: 'Notizen Mikrotypo',
       text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
     },
     {
-      name: 'SKETCH 5 "imagine observe remember"',
-      images: [{ url: '/sketch1.png', alt: 'alt' }],
-      text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
-    },
-    {
-      name: 'Mikrotypo',
-      images: [{ url: '/sketch1.png', alt: 'alt' }],
-      text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
+      name: 'Notizen Besprechung erster Plakatentwürfe',
+      text: ``,
     },
     {
       name: 'Adobe Training',
-      images: [{ url: '/sketch1.png', alt: 'alt' }],
       text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
     },
   ];

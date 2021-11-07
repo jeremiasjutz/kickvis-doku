@@ -141,12 +141,21 @@ function MyApp({ Component, pageProps }: AppProps) {
                           <div
                             key={name}
                             className={`border-black dark:border-white flex items-center ${
+                              i === projects.length - 2 ||
+                              i === projects.length - 3
+                                ? 'lg:border-b-0'
+                                : ''
+                            } ${
                               i === projects.length - 1
                                 ? 'md:border-r md:translate-x-[1px] lg:translate-x-0'
                                 : 'border-b'
                             } ${
                               i % 2 === 0 ? '' : 'md:border-l lg:border-l-0'
-                            } ${i % 3 === 2 ? '' : 'lg:border-r'}`}
+                            } ${i % 3 === 2 ? '' : 'lg:border-r'} ${
+                              i === projects.length - 1
+                                ? 'lg:translate-x-[1px]'
+                                : ''
+                            }`}
                           >
                             <Link href={nameToSlug(name)} passHref>
                               <motion.a
