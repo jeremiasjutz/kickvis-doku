@@ -756,8 +756,21 @@ const getProjects = () => {
     },
     {
       name: 'SKETCH 3 «Kopf»',
-      images: [{ url: '/sketch1.png', alt: 'alt' }],
-      text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
+      images: [
+        {
+          url: '/images/sketch-3-kopf/sketch-3-kopf.jpg',
+          alt: 'Sketch 3 «Kopf»',
+        },
+      ],
+      text: `
+      <h3>Projektbeschrieb</h3>
+      <p>Bei diesem Projekt mussten wir den Kopf eines Mitschülers abzeichnen.</p>
+
+      <h3>Vorgehensweise</h3>
+      <p>Zuerst habe ich die Konturen ungefähr gezeichnet und danach die Augenhöhlen und die Augen hinzugefügt. Von da aus konnte ich
+      nun das Nasenbein und die Nase zeichnen. Danach kam der Mund hin. Schlussendlich habe ich noch die Haare ergänzt.
+      </p>
+    `,
     },
     {
       name: 'Bildcollage «match cut»',
@@ -774,7 +787,19 @@ const getProjects = () => {
       etwas gefunden habe, was so halb passt.</p>
     `,
     },
-    { name: 'Notizen Input Entwurfsprozesse', text: '' },
+    {
+      name: 'Notizen Input Entwurfsprozesse',
+      text: `
+      <p>Ein Entwurf kann sehr früh beginnen. Es reicht bereits ein gekritzel auf einer Serviette. Daraus kann dann
+      etwas weiteres entstehen. Um etwas zu entwerfen, lohnt es sich Recherche zu betreiben (wie am Beispiel des Zündholzes).
+      Manchmal muss man auch einfach drauf los probieren indem man zum Beispiel ein Subjekt mehrmals mit unterschiedlichen Hintergründen
+      darstellt. Oder wie am Beispiel von Christoph Niemann: Einfach machen!<br>
+      Man kann auch verschiedene Bildelemente auf unterschiedliche Art und Weise kombinieren, bis man zum gewünschten Entwurf kommt.<br>
+      Wenn man eine Idee hat, lohnt es sich auch, diese zu transformiere. Dazu gibt es eine hilfreiche Checkliste. Die daraus neu gewonnenen
+      Ideen können den Entwurf in die richtige Richtung leiten.
+      </p>
+    `,
+    },
     {
       name: 'Bild im Raster',
       images: readDir(
