@@ -113,7 +113,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               <>
                 <nav className="fixed inset-0 left-0 flex flex-col justify-between w-12 bg-white border-r border-black dark:border-white dark:bg-black md:inset-y-6 md:left-6 ">
                   <Link href="/" passHref>
-                    <a className="grid w-full h-12 border-b border-black cursor-pointer dark:border-white place-items-center">
+                    <a className="grid w-full h-12 border-b border-black cursor-pointer dark:border-white place-items-center" onClick={()=>setIsMenuOpen(false)}>
                       <RiHomeLine />
                     </a>
                   </Link>

@@ -98,10 +98,10 @@ const getProjects = () => {
       ],
       text: `
         <h3>Projektbeschrieb</h3>
-        <p>Bei diesem Projekt musste man versucheb, seine eigene Hand drei dimensional abzuzeichnen.</p>
+        <p>Bei diesem Projekt musste man versuchen, seine eigene Hand, dreidimensional abzuzeichnen.</p>
 
         <h3>Vorgehensweise</h3>
-        <p>Nach einem Input von Anja, konnten wir mit dem Zeichnen beginnen.<br>
+        <p>Nach einem Input, konnten wir mit dem Zeichnen beginnen.<br>
         In einem ersten Schritt, haben wir die Konturen der Hand nachgezeichnet.
         Danach konnten wir eine Linie zeichnen, welche uns später bei der Schattierung geholfen hat.<br>
         Schlussendlich ergab sich ein, so einigermassen als Hand erkennbarer, Sketch.
@@ -134,7 +134,7 @@ const getProjects = () => {
       <p>Dieses Projekt ist ähnlich wie das «Farbenlehre» Projekt. Hier mussten wir aber vier Farben wählen und damit vier verschiedene Stimmungen kreieren.</p>
 
       <h3>Vorgehensweise</h3>
-      <p>Zuerst habe ich ein Layout mit vier Rechtecken gemacht und diese dann eingefärbt. Danach habe ich 3 Kopien davon gemacht und die Farben gewechselt,
+      <p>Zuerst habe ich ein Layout mit vier Rechtecken gemacht und diese dann eingefärbt. Danach habe ich drei Kopien davon gemacht und die Farben gewechselt,
       damit eine neue Stimmung entsteht. Für weitere entwürfe habe ich dasselbe gemacht, einfach das Layout zu beginn angepasst.</p>
       `,
     },
@@ -387,6 +387,7 @@ const getProjects = () => {
           <h3 class="inline ml-6">Johnson Kingston (Mara)
         </summary>
         <h4>Einleitung</h4>
+        <ul>
         <li>Rätsel mit Namens Spiel (Fussballspieler Name)</li>
         </ul>
         <h4>Hauptteil</h4>
