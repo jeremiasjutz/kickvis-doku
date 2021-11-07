@@ -63,7 +63,15 @@ const getProjects = () => {
           alt: 'Form - Schriftvergleich',
         },
       ],
-      text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
+      text: `
+        <h3>Projektbeschrieb</h3>
+        <p>In diesem Projekt mussten wir zu zweit, zwei ähnliche Schriftarten vergleichen. Wir haben uns für die beiden Schriftarten
+        Didot und Bodoni entschieden.</p>
+
+        <h3>Vorgehensweise</h3>
+        <p>Zuerst haben wir in Adobe Illustrator stark unterschiedliche Zeichen und Buchstaben übereinander gelegt und diese danach in Adobe InDesign
+        mit ein Paar anderen Elementen gelayoutet.</p>
+      `,
     },
     {
       name: 'Notizen Input Wahrnehmung',
@@ -176,14 +184,14 @@ const getProjects = () => {
         `,
     },
     {
-      name: 'Vorträge VisDes',
+      name: 'Notizen Vorträge VisDes',
       text: `
-      <div class="space-y-12">
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          Josef Müller Brockmann (Nicola)
+      <div>
+      <details class="-mt-6 pb-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">Josef Müller Brockmann (Nicola)</h3>
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <ul>
           <li>Josef Müller Brockmann (1914 - 1996)</li>
           <li>
@@ -191,7 +199,7 @@ const getProjects = () => {
             modern aus.
           </li>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>
             Interessanter Lebenslauf. Gestaltung mit PowerPoint unterstützt das
@@ -208,26 +216,27 @@ const getProjects = () => {
           <li>Massgebende Mitarbeit am SBB Logo.</li>
           <li>Er hat von Hand gearbeitet.</li>
         </ul>
-        <h3>Abschluss</h3>
+        <h4>Abschluss</h4>
         <ul>
           <li>Nicht vorhanden</li>
         </ul>
-        <h3>Generell</h3>
+        <h4>Generell</h4>
         <ul>
           <li>Relativ oft das Füllwort "Ähm" verwendet</li>
         </ul>
       </details>
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          David Carson (Sophit)
+      <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
+      <details class="py-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">David Carson (Sophit)
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <ul>
           <li>Typisch mit "Ich begrüsse euch ..."</li>
           <li>David Carson in Texas geboren</li>
           <li>Ist Profi Surfer</li>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>Hat Studium abgebrochen</li>
           <li>Arbeitete für ein Skater Magazin</li>
@@ -241,21 +250,22 @@ const getProjects = () => {
             Gefühl)
           </li>
         </ul>
-        <h3>Abschluss</h3>
+        <h4>Abschluss</h4>
         <ul>
           <li>Bild von Carson vor seinem Desktop</li>
         </ul>
       </details>
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          Otto Aicher (Fabian)
+      <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
+      <details class="py-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">Otto Aicher (Fabian)
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <ul>
           <li>Ging etwas schnell los</li>
           <li>Piktogramme als Einstieg passend</li>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>Weigerte sich in die Hitler Jugend zu gehen, kam dann in den Knast</li>
           <li>Bildhauer Studium</li>
@@ -276,21 +286,22 @@ const getProjects = () => {
           <li>Prägte den Begriff Corporate Design</li>
           <li>Logo für Lufthansa</li>
         </ul>
-        <h3>Abschluss</h3>
+        <h4>Abschluss</h4>
         <ul>
           <li>Piktogramme als Ausstieg passend.</li>
         </ul>
       </details>
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          Paula Scher (Adrian)
+      <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
+      <details class="py-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">Paula Scher (Adrian)
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <ul>
           <li>Warm up, Bewegungen</li>
           <li>Intro Video über Typografie</li>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>Biografie als Bild sehr interessant</li>
           <li>Grossstadt (Philly) hat sie geprägt</li>
@@ -307,20 +318,21 @@ const getProjects = () => {
           <li>Wahlzettel Flop</li>
           <li>Identity vom Public Theatre</li>
         </ul>
-        <h3>Abschluss</h3>
+        <h4>Abschluss</h4>
         <ul>
           <li>Vorstellung von verschiedenen Arbeiten in Form eines Videos</li>
         </ul>
       </details>
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          Adrian Frutiger (Alain)
+      <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
+      <details class="py-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">Adrian Frutiger (Alain)
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <ul>
           <li>2 Truths 1 Lie</li>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>Schriftsetzerlehre</li>
           <li>Studium an der Kunstgewerbeschule Zürich</li>
@@ -340,20 +352,21 @@ const getProjects = () => {
           <li>Alle Schriften von Hand (auch wenn sie geometrisch aussehen)</li>
           <li>Heute noch omnipräsent</li>
         </ul>
-        <h3>Abschluss</h3>
+        <h4>Abschluss</h4>
         <ul>
           <li>Auflösung 2 Truths 1 Lie</li>
         </ul>
       </details>
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          Stefan Sagmeister (Lina)
+      <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
+      <details class="py-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">Stefan Sagmeister (Lina)
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <ul>
           <li>Infos zu Poster</li>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>Biografie</li>
           <li>Coverart Lou Reed</li>
@@ -363,19 +376,20 @@ const getProjects = () => {
           <li>The Happy Film</li>
           <li>The Happy Show</li>
         </ul>
-        <h3>Abschluss</h3>
+        <h4>Abschluss</h4>
         <ul>
           <li>Bogen zurück zu Beginn (Poster)</li>
         </ul>
       </details>
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          Johnson Kingston (Mara)
+      <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
+      <details class="py-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">Johnson Kingston (Mara)
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <li>Rätsel mit Namens Spiel (Fussballspieler Name)</li>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>Johnson Kingston ist ein Deckname für 2 Personen (Ivan Weiss, Michael Kryenbühl)</li>
           <li>Grafikdesign an Fachhochschule Luzern</li>
@@ -390,21 +404,22 @@ const getProjects = () => {
           </ul>
           <li>Sind auch am Weltformat</li>
         </ul>
-        <h3>Abschluss</h3>
+        <h4>Abschluss</h4>
         <ul>
           <li>Zitat</li>
         </ul>
       </details>
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          Joost Grootens (Silvan)
+      <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
+      <details class="py-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">Joost Grootens (Silvan)
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <ul>
           <li>Zitat "I swear I use no art at all"</li>
           <li>Aufforderung dazu Gedanken zu machen</li>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>Biografie</li>
           <ul class="ml-6">
@@ -423,20 +438,21 @@ const getProjects = () => {
           <li>Eigene Schriftfamilie mit Piktogrammen (2015)</li>
           <li>Hauptmerkmal des Studios sind Atlasse</li>
         </ul>
-        <h3>Abschluss</h3>
+        <h4>Abschluss</h4>
         <ul>
           <li>Zitat</li>
         </ul>
       </details>
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          Studio Feixen (Dario)
+      <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
+      <details class="py-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">Studio Feixen (Dario)
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <ul>
           <li>Intro Video</li>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>Plakate für Südpol</li>
           <li>
@@ -471,20 +487,21 @@ const getProjects = () => {
         <li>Schrift Noi</li>
         <li>Spiel mit Raum (strukturiert chaotisch)</li>
         </ul>
-        <h3>Abschluss</h3>
+        <h4>Abschluss</h4>
         <ul>
           <li>Bedankung</li>
         </ul>
       </details>
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          Dia Studio (Yada)
+      <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
+      <details class="py-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">Dia Studio (Yada)
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <ul>
           <li>Video Intro</li>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>Design Agentur</li>
           <li>Aussenstellen Genf, NY</li>
@@ -514,7 +531,7 @@ const getProjects = () => {
           </ul>
           <li>MoMA it wasn't written</li>
         </ul>
-        <h3>Abschluss</h3>
+        <h4>Abschluss</h4>
         <ul>
           <li>Fazit</li>
           <ul class="ml-6">
@@ -523,15 +540,16 @@ const getProjects = () => {
           <li>Fragen ans Publikum</li>
         </ul>
       </details>
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          Irma Boom (Annina)
+      <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
+      <details class="py-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">Irma Boom (Annina)
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <ul>
           <li>Video Intro</li>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>Typografin</li>
           <li>Gestalterin</li>
@@ -554,11 +572,12 @@ const getProjects = () => {
           <li>Buch wiederspiegelt Thema</li>
         </ul>
       </details>
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          Casey Reas (Seraina)
+      <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
+      <details class="py-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">Casey Reas (Seraina)
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <ul>
           <li>1972 Troy Ohio</li>
           <li>Bachelor Architecture Art Planning</li>
@@ -569,7 +588,7 @@ const getProjects = () => {
             <li>Programmiersprache für Designer & Künstler</li>
           </ul>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>REAS</li>
           <li>Installationen</li>
@@ -584,7 +603,7 @@ const getProjects = () => {
           </ul>
           <li>Ausstellung in der Bitforms Gallery</li>
         </ul>
-        <h3>Abschluss</h3>
+        <h4>Abschluss</h4>
         <ul>
           <li>Fazit</li>
           <ul class="ml-6">
@@ -593,15 +612,16 @@ const getProjects = () => {
           </ul>
         </ul>
       </details>
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          Wolfgang Weingart (Moritz)
+      <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
+      <details class="py-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">Wolfgang Weingart (Moritz)
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <ul>
           <li>Rätsel</li>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>Experimente mit Buchstaben M</li>
           <ul class="ml-6">
@@ -624,7 +644,7 @@ const getProjects = () => {
           <li>Weitere Arbeiten Richtung Collage</li>
           <li>Diverse Auszeichnungen</li>
         </ul>
-        <h3>Abschluss</h3>
+        <h4>Abschluss</h4>
         <ul>
           <li>Analyse</li>
           <ul class="ml-6">
@@ -633,15 +653,16 @@ const getProjects = () => {
           </ul>
         </ul>
       </details>
-      <details>
-        <summary class="text-2xl xl:text-3xl focus:outline-none">
-          April Greiman (Nicole)
+      <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
+      <details class="-mb-6 pt-6">
+        <summary class="focus:outline-none cursor-pointer">
+          <h3 class="inline ml-6">April Greiman (Nicole)
         </summary>
-        <h3>Einleitung</h3>
+        <h4>Einleitung</h4>
         <ul>
           <li>Bildvergleich</li>
         </ul>
-        <h3>Hauptteil</h3>
+        <h4>Hauptteil</h4>
         <ul>
           <li>Inspiriert von Jayme Odgers</li>
           <li>Grafikdesignerin</li>
@@ -665,7 +686,7 @@ const getProjects = () => {
           </ul>
           <li>Eigenes Design Studio (Made in Space)</li>
         </ul>
-        <h3>Abschluss</h3>
+        <h4>Abschluss</h4>
         <ul>
           <li>Verweis auf Webseiten</li>
           <li>Analyse</li>
@@ -683,7 +704,38 @@ const getProjects = () => {
     {
       name: 'Notizen Bildbetrachtung, Bildanalyse, Semiotik',
       text: `
+        <h3>Bildbetrachtung</h3>
+        <p>Bei der Bildbetrachtung wird noch nichts bewertet. Man schaut sich das Plakat oder das Bild (oder was es dann auch immer ist) an und überlegt sich:
+          <ul>
+            <li>
+              Wie ist das Bild aufgebaut?
+            </li>
+            <li>
+              Wie wird mein Blick vom Inhalt gefangen?
+            </li>
+            <li>
+              Wie wird mein Blick geführt?
+            </li>
+            <li>
+              Wie wirkt das Bild auf mich persönlich?
+            </li>
+          </ul>
+        </p>
+        <h3>Bildanalyse</h3>
+        <p>In einem weiteren Schritt analysiert man das Bild. Grundsätzlich geschieht das in drei Schritten:
+          <ol>
+            <li>Was sehe ich?</li>
+            <li>Was verstehe ich?</li>
+            <li>Fazit (evtl. mit Bewertung)</li>
+          </ol>
 
+        </p>
+        <h3>Semiotik</h3>
+        <p>Die Semiotik ist die Lehre der Zeichen und enthält die Syntaktik, Semantik und Pragmatik<br>
+        Ein Zeichen ist etwas das auf etwas anderes zeigt und vom Empfänger als Zeichen verstanden wird. Es besteht aus dem Zeihen an sich, dem Objekt auf das es zeigt und das was der Empfänger davon versteht.<br>
+        Die Syntaktik (Komposition) setzt sich mit der Komposition auseinander: Wie sind die Beziehungen zwischen den Zeichen? Wie werden die Zeichen formal verknüpft?<br>
+        Die Semantik (Bedeutung) beschäftigt sich mit der Beziehung des Zeichens zum Bezeichneten.<br>
+        Die Pragmatik (Anwendung) untersucht die Beziehung des Zeichens zu seinem Benutzer</p>
       `,
     },
     {
@@ -709,7 +761,17 @@ const getProjects = () => {
     {
       name: 'Bildcollage «match cut»',
       images: [{ url: '/sketch1.png', alt: 'alt' }],
-      text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
+      text: `
+      <h3>Projektbeschrieb</h3>
+      <p>In diesem Projekt, mussten wir verschiedene Bildelemente aus Zeitschriften so kombinieren, dass ein neues Bild daraus entsteht.<br>
+      In einem zweiten Schritt ging es darum, zwei Bildelemente mit Weissraum zu kombinieren, damit der Betrachter das leere reininterpretieren muss.</p>
+
+      <h3>Vorgehensweise</h3>
+      <p>Zuerst suchte ich mir in verschiedenen Zeitschriften Bildelemente heraus, welche mit anderen Bildelementen kombiniert werden können.
+      Danach habe ich auf viele verschiedene Arten versucht die Elemente zu kombinieren.<br>
+      Beim zweiten Auftrag mit dem Weissraum, fiel mir das ganze etwas schwerer. Ich suchte zuerst lange nach passenden Bildelementen, bis ich schlussendlich
+      etwas gefunden habe, was so halb passt.</p>
+    `,
     },
     { name: 'Notizen Input Entwurfsprozesse', text: '' },
     {
@@ -787,11 +849,36 @@ const getProjects = () => {
     },
     {
       name: 'Notizen Mikrotypo',
-      text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
+      text: `
+      <h3>Mikrotypografie</h3>
+      <p>Die Mikrotypografie setzt sich mit den einzelnen Zeichen der Typografie auseinander. Dazu gehören folgende Zeichen:
+      <ul>
+        <li>Anführungszeichen</li>
+        <li>Mathematische Zeichen</li>
+        <li>At-Zeichen</li>
+        <li>Prozent-/Promillezeichen</li>
+        <li>Versalien im Satz</li>
+        <li>Satzzeichen</li>
+        <li>Horizontale Striche</li>
+        <li>Zahlen</li>
+      </ul>
+      </p>
+      `,
     },
     {
       name: 'Notizen Besprechung erster Plakatentwürfe',
-      text: ``,
+      images: [
+        {
+          url: '/images/notizen-plakat/notizen-plakat.png',
+          alt: 'Verbesserung des Plakatentwurfes',
+        },
+      ],
+      text: `
+      <h3>Besprechung mit David</h3>
+      <p>Nachdem ich ein paar erste Entwürfe meines Plakates fertig hatte, ging ich zu David, um mit ihm das weitere Vorgehen zu besprechen.<br>
+      Er hat mir gezeigt, welche Entwürfe in eine gute Richtung gehen, und was ich noch verbessern muss. Bei einem der Plakatentwürfe, fand er das Layout recht gut, jedoch fehlt in der Mitte etwas.
+      Zudem ist das Zitat zu lange und den Schriftzug «Studio» ganz oben kann man nicht perfekt lesen. Mit diesen Inputs konnte ich nochmals dahinter und habe die angesprochenen Punkte versucht zu verbessern. Im Bild unten sieht man, was genau verbessert wurde.</p>
+      `,
     },
     {
       name: 'Adobe Training',

@@ -3,19 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: 'Clash Grotesk';
-    src: url('/fonts/ClashGrotesk-Variable.woff2') format('woff2');
-    font-weight: 200 700;
-    font-display: swap;
-    font-style: normal;
+  .prose h4,
+  .prose h3 {
+    @apply dark:text-white !important;
   }
-  @font-face {
-    font-family: 'Space Grotesk';
-    src: url('/fonts/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
-    font-weight: 300 700;
-    font-display: swap;
-    font-style: normal;
+  .prose ul > li::before {
+    @apply bg-black dark:bg-white w-1 h-1 top-4 !important;
+  }
+  .prose ol > li::before {
+    @apply text-black dark:text-white text-base top-[5px] !important;
   }
   @font-face {
     font-family: 'Satoshi';

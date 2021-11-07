@@ -13,6 +13,13 @@ module.exports = {
       sans: ['Satoshi', 'sans-serif'],
     },
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            h3: { fontWeight: '400' },
+          },
+        },
+      },
       colors: {
         white: '#FAFAFA',
         black: '#090909',

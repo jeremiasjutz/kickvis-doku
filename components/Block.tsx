@@ -7,7 +7,7 @@ interface BlockProps extends HTMLAttributes<HTMLDivElement> {
 const Block = ({ children, noBorder = false }: BlockProps) => {
   return (
     <section
-      className={`flex justify-center border-black dark:border-white ${
+      className={`flex relative justify-center border-black dark:border-white ${
         noBorder ? '' : 'border-t'
       }`}
     >

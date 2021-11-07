@@ -85,7 +85,7 @@ const Project = ({
             <motion.article
               variants={title}
               transition={transition}
-              className="p-6 prose-lg md:p-12 dark:text-white md:prose-xl"
+              className="max-w-full p-6 prose prose-lg md:p-12 dark:text-white md:prose-xl"
               dangerouslySetInnerHTML={{ __html: project.text }}
             />
           </Block>
