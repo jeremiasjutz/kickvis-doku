@@ -9,9 +9,10 @@ import { AnimatePresence, motion, Tween } from 'framer-motion';
 
 import type { AppProps } from 'next/app';
 
-import projects, { Project } from '../projects';
+import projects from '../projects';
 import DarkModeSwitcher from '../components/DarkModeSwitcher';
 import { nameToSlug } from '../utils';
+import { Project } from '../getProjects';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const springConfig: Tween = {

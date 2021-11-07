@@ -1,5 +1,11 @@
 import { readdirSync, writeFileSync } from 'fs';
-import { Project } from './projects';
+
+export type Project = {
+  name: string;
+  images?: { url: string; alt: string }[];
+  text?: string;
+  cols?: string;
+};
 
 const getProjects = () => {
   const readDir = (url: string, imageAlt: string) =>
@@ -797,13 +803,6 @@ const getProjects = () => {
     './projects.ts',
     `
     const projects = ${JSON.stringify(projects)};
-
-    export type Project = {
-      name: string;
-      images?: { url: string; alt: string }[];
-      text?: string;
-      cols?: string;
-    };
 
     export default projects;`
   );

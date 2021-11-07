@@ -6,15 +6,16 @@ import { RiArrowLeftLine } from 'react-icons/ri';
 import { motion, Variants } from 'framer-motion';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import projects, { Project as ProjectType } from '../projects';
+import projects from '../projects';
 import { nameToSlug } from '../utils';
 import Block from '../components/Block';
+import { Project } from '../getProjects';
 
 const Project = ({
   project,
   scrollContainerRef,
 }: {
-  project: ProjectType;
+  project: Project;
   scrollContainerRef: RefObject<HTMLDivElement>;
 }) => {
   const container: Variants = {
