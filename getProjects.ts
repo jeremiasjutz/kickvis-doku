@@ -883,7 +883,18 @@ const getProjects = () => {
     },
     {
       name: 'Adobe Training',
-      text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi temporibus quo voluptatibus in veniam quaerat dolorum maxime ipsa iure eius, neque aut et nemo, laboriosam nam iusto. Maiores mollitia natus deserunt dicta, ducimus placeat ipsam expedita omnis illo sunt eum recusandae odio facilis, repudiandae debitis adipisci corporis neque molestias! Illum id officia cupiditate. Veniam, id aliquid vero blanditiis neque inventore ab. Distinctio minus, eveniet ut atque debitis est voluptate omnis adipisci eos. Mollitia enim ut maiores laborum consequatur molestiae ducimus repellat numquam laudantium harum veritatis quos soluta officiis facere dolorem accusantium, saepe sint expedita in. Beatae deleniti placeat tempore nulla animi iste eveniet sit dolorem provident ipsa, molestias, ratione maxime. Inventore eveniet officia quisquam illum. Tempore voluptatem ut, soluta omnis magni corrupti. Laboriosam aspernatur ipsum error id vitae, nisi aliquam quibusdam cum sapiente tenetur beatae, adipisci quasi tempora commodi dolor fugiat expedita hic illum fugit doloremque ipsam ad! Similique quidem alias cupiditate excepturi nostrum, aliquam, fugiat officiis magnam rem accusantium quasi. Unde incidunt, at adipisci molestiae possimus rerum culpa, praesentium iure voluptate ullam in a. Dolores veritatis autem facere repudiandae rem, animi alias, corporis sapiente sint quibusdam ullam. Veritatis fuga, molestias nam velit magni delectus eum id voluptas commodi rem.',
+      images: readDir(
+        './public/images/adobe-selbsttraining',
+        'Adobe Fresco Screenshot'
+      ),
+      cols: 'md:grid-cols-2',
+      text: `
+      <h3>Adobe Fresco</h3>
+      <p>Für die Sketches habe ich oft Adobe Fresco verwendet, welches ich zuvor noch nicht kannte.
+      Dieses Programm wurde spezifisch für Tablets wie das iPad entwickelt, und vermittelt ein sehr echtes Schreib-/Zeichnungsgefühl.
+      In den Bildern sieht man das Programm und wie ich darin meine Zeichnungen habe.<br><br>
+      Leider bin ich nicht mehr dazu gekommen, weitere Programme wie After Effects oder ein anderes Adobe Programm, das ich noch nicht kenne, auszuprobieren.
+      Ich konnte jedoch mein Wissen in den Programmen Adobe Photoshop, Adobe Illustrator, Adobe InDesign und Adobe Xd wieder mal auffrischen, was sicher gut war.</p>`,
     },
   ];
 
