@@ -775,6 +775,7 @@ const getProjects = () => {
     {
       name: 'Bildcollage «match cut»',
       images: readDir('./public/images/match-cut', 'Match cut Versuch'),
+      cols: 'md:grid-cols-2',
       text: `
       <h3>Projektbeschrieb</h3>
       <p>In diesem Projekt, mussten wir verschiedene Bildelemente aus Zeitschriften so kombinieren, dass ein neues Bild daraus entsteht.<br>
