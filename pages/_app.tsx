@@ -24,6 +24,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const transition = {
     ...springConfig,
+    delayChildren: 0.1,
+    staggerChildren: 0.025,
   };
 
   const container = {

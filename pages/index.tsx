@@ -54,15 +54,15 @@ const Home = ({
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: scrollPersist > 0 ? 0 : 0.025,
+        staggerChildren: scrollPersist > 0 ? 0 : 0.1,
       },
     },
   };
 
   const item = {
     hidden: {
-      opacity: 0,
-      y: -50,
+      opacity: scrollPersist > 0 ? 1 : 0,
+      y: scrollPersist > 0 ? 0 : 100,
     },
     show: { opacity: 1, y: 0, x: 0 },
   };
