@@ -12,6 +12,7 @@ export default class CustomDocument extends Document {
             type="font/woff2"
             crossOrigin="anonymous"
           />
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
         </Head>
         <body className="text-black bg-white dark:bg-black dark:text-white">
           <Main />
