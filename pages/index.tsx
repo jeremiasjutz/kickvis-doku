@@ -1,7 +1,15 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import { AnimatePresence, motion } from 'framer-motion';
-import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
+import {
+  Dispatch,
+  RefObject,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 import projects from '../projects';
 import { nameToSlug } from '../utils';
@@ -12,8 +20,12 @@ const getRand = (length: number) => {
 
 const Home = ({
   scrollContainerRef,
+  scrollPersist,
+  setScrollPersist,
 }: {
   scrollContainerRef: RefObject<HTMLDivElement>;
+  scrollPersist: number;
+  setScrollPersist: Dispatch<SetStateAction<number>>;
 }) => {
   const [src, setSrc] = useState('');
 
@@ -28,7 +40,9 @@ const Home = ({
   }, []);
 
   useEffect(() => {
-    scrollContainerRef.current?.scrollTo({ top: 0 });
+    scrollContainerRef.current?.scrollTo({
+      top: scrollPersist ?? 0,
+    });
     window.addEventListener('mousemove', move);
     return () => {
       window.removeEventListener('mousemove', move);
@@ -40,14 +54,17 @@ const Home = ({
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.05,
+        staggerChildren: scrollPersist > 0 ? 0 : 0.025,
       },
     },
   };
 
   const item = {
-    hidden: { opacity: 0, y: 100 },
-    show: { opacity: 1, y: 0 },
+    hidden: {
+      opacity: 0,
+      y: -50,
+    },
+    show: { opacity: 1, y: 0, x: 0 },
   };
 
   return (
@@ -70,6 +87,11 @@ const Home = ({
                     )
                   }
                   onMouseLeave={() => setSrc('')}
+                  onClick={() => {
+                    setScrollPersist(
+                      scrollContainerRef.current?.scrollTop ?? 0
+                    );
+                  }}
                   className="relative block p-12 my-[0.3px] text-4xl transition-all w-[fit-content] duration-700 origin-left cursor-pointer md:text-5xl hover:font-bold"
                 >
                   {project.name}

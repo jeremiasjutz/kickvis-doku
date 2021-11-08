@@ -15,6 +15,8 @@ import { nameToSlug } from '../utils';
 import { Project } from '../getProjects';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [scrollPersist, setScrollPersist] = useState(0);
+
   const springConfig: Tween = {
     type: 'tween',
     duration: 0.7,
@@ -22,9 +24,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const transition = {
     ...springConfig,
-    delayChildren: 0.1,
-    staggerChildren: 0.025,
   };
+
   const container = {
     hidden: { opacity: 0, transition },
     show: {
@@ -152,8 +153,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                                 ? 'lg:border-b-0'
                                 : ''
                             } ${
+                              i === projects.length - 2 ? 'md:border-b-0' : ''
+                            } ${
                               i === projects.length - 1
-                                ? 'md:border-r md:translate-x-[1px] lg:translate-x-0'
+                                ? 'lg:translate-x-0'
                                 : 'border-b'
                             } ${
                               i % 2 === 0 ? '' : 'md:border-l lg:border-l-0'
@@ -186,6 +189,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <Component
                   {...pageProps}
                   scrollContainerRef={scrollContainerRef}
+                  scrollPersist={scrollPersist}
+                  setScrollPersist={setScrollPersist}
                 />
               </>
             )}
