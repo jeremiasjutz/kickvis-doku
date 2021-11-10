@@ -2,6 +2,7 @@ import '../styles/tailwind.css';
 
 import Link from 'next/link';
 import SimpleReactLightbox from 'simple-react-lightbox';
+import { useRouter } from 'next/router';
 import { RiHomeLine } from 'react-icons/ri';
 import { ThemeProvider } from 'next-themes';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -16,6 +17,7 @@ import { Project } from '../getProjects';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [scrollPersist, setScrollPersist] = useState(0);
+  const { asPath } = useRouter();
 
   const springConfig: Tween = {
     type: 'tween',
@@ -55,6 +57,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       projects.flatMap(({ images }) => images?.map(({ url }) => url) ?? [])
     );
   }, []);
+  console.log({ asPath });
 
   const cacheImages = useCallback(
     async (arr: string[]) => {
@@ -166,6 +169,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                               i === projects.length - 1
                                 ? 'lg:translate-x-[1px]'
                                 : ''
+                            } ${
+                              asPath === `/${nameToSlug(name)}`
+                                ? 'bg-black dark:bg-white text-white dark:text-black'
+                                : ''
                             }`}
                           >
                             <Link href={nameToSlug(name)} passHref>
@@ -177,7 +184,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                                   });
                                   setIsMenuOpen(false);
                                 }}
-                                className={`hyphens px-12 py-6 text-2xl md:text-3xl transition-colors duration-700 origin-left  hover:text-indigo-500`}
+                                className="px-12 py-6 text-2xl transition-colors duration-700 origin-left hyphens md:text-3xl hover:text-indigo-500"
                               >
                                 {name}
                               </motion.a>
