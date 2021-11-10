@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, Variants } from 'framer-motion';
 import {
   Dispatch,
   RefObject,
@@ -33,8 +33,7 @@ const Home = ({
 
   const move = useCallback((e: MouseEvent) => {
     if (imageRef.current && scrollContainerRef.current) {
-      imageRef.current.style.top =
-        e.pageY + scrollContainerRef.current.scrollTop + 'px';
+      imageRef.current.style.top = e.pageY + 'px';
       imageRef.current.style.left = e.pageX + 'px';
     }
   }, []);
@@ -49,7 +48,7 @@ const Home = ({
     };
   }, []);
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -59,7 +58,7 @@ const Home = ({
     },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: {
       opacity: scrollPersist > 0 ? 1 : 0,
       y: scrollPersist > 0 ? 0 : 100,
@@ -72,38 +71,34 @@ const Home = ({
       <Head>
         <title>Kursdokumentation KICKVIS</title>
       </Head>
-      <div className="ml-12 ">
-        {projects.map((project, i) => (
-          <div key={project.name} className="bg-white dark:bg-black">
-            <div className="w-full mx-auto overflow-hidden border-black dark:border-white max-w-7xl">
-              <Link href={nameToSlug(project.name)} passHref>
-                <motion.a
-                  variants={item}
-                  onMouseEnter={() =>
-                    setSrc(
-                      project.images
-                        ? project.images[getRand(project.images.length)].url
-                        : ''
-                    )
-                  }
-                  onMouseLeave={() => setSrc('')}
-                  onClick={() => {
-                    setScrollPersist(
-                      scrollContainerRef.current?.scrollTop ?? 0
-                    );
-                  }}
-                  className="relative block p-12 my-[0.3px] text-3xl sm:text-4xl transition-all w-[fit-content] duration-700 origin-left cursor-pointer md:text-5xl hover:font-bold"
-                >
-                  {project.name}
-                </motion.a>
-              </Link>
-            </div>
-            {i === projects.length - 1 ? null : (
-              <div className="relative z-0 w-full border-b border-black dark:border-white" />
-            )}
+      {projects.map((project, i) => (
+        <div key={project.name} className="bg-white dark:bg-black">
+          <div className="w-full mx-auto overflow-hidden border-black dark:border-white max-w-7xl">
+            <Link href={nameToSlug(project.name)} passHref>
+              <motion.a
+                variants={item}
+                onMouseEnter={() =>
+                  setSrc(
+                    project.images
+                      ? project.images[getRand(project.images.length)].url
+                      : ''
+                  )
+                }
+                onMouseLeave={() => setSrc('')}
+                onClick={() => {
+                  setScrollPersist(scrollContainerRef.current?.scrollTop ?? 0);
+                }}
+                className="block p-8 md:p-12 text-3xl sm:text-4xl transition-all w-[fit-content] duration-700 origin-left cursor-pointer md:text-5xl hover:font-bold"
+              >
+                {project.name}
+              </motion.a>
+            </Link>
           </div>
-        ))}
-      </div>
+          {i === projects.length - 1 ? null : (
+            <div className="w-full border-b border-black dark:border-white" />
+          )}
+        </div>
+      ))}
       <AnimatePresence>
         {src !== '' ? (
           <motion.img
@@ -113,7 +108,7 @@ const Home = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             src={src}
-            className="absolute z-10 max-w-lg -translate-x-1/2 -translate-y-1/2 bg-white border border-black pointer-events-none left-1/2 top-1/2 dark:bg-black dark:border-white max-h-96 mix-blend-difference invert dark:invert-0"
+            className="fixed max-w-lg -translate-x-1/2 -translate-y-1/2 bg-white border border-black pointer-events-none left-1/2 top-1/2 dark:bg-black dark:border-white max-h-96 mix-blend-difference invert dark:invert-0"
           />
         ) : null}
       </AnimatePresence>

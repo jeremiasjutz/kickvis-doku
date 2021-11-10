@@ -58,12 +58,7 @@ const Project = ({
       <Head>
         <title>{project.name}</title>
       </Head>
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className="ml-12"
-      >
+      <motion.div variants={container} initial="hidden" animate="show">
         <Block noBorder>
           <motion.div
             variants={title}

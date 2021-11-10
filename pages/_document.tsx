@@ -14,7 +14,7 @@ export default class CustomDocument extends Document {
           />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
         </Head>
-        <body className="text-black bg-white dark:bg-black dark:text-white">
+        <body className="overflow-hidden text-black bg-white dark:bg-black dark:text-white">
           <Main />
           <NextScript />
         </body>
