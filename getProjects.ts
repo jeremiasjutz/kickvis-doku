@@ -28,13 +28,13 @@ const getProjects = () => {
       text: `
       <h3>Projektbeschrieb</h3>
       <p>Bei diesem Projekt musste man ein Begriffspaar wählen und dazu zwei Frames in einem bestimmten
-      Seitenverhältnis <small class="tabular-nums">[1:1 | 16:9 | 4:3]</small> mit Kreisen gestalten<br>
-      Ich habe mich für das Begriffspaar <em>Nah und Fern</em> entschieden</p>
+      Seitenverhältnis <small class="tabular-nums">[1:1 | 16:9 | 4:3]</small> mit Kreisen gestalten.<br>
+      Ich habe mich für das Begriffspaar <em>Nah und Fern</em> entschieden.</p>
 
       <h3>Vorgehensweise</h3>
-      <p>In ersten Entwürfen, habe ich nur mit der Distanz zwischen den Punkten gearbeitet. In weiteren Entwürfen
-      habe ich auch noch mit der Grösse der Punkte herumexperimentiert. Meistens habe ich nach der
-      Platzierung der Punkte versucht, eine Version die noch mehr Kontrast hat, zu machen.
+      <p>In den ersten Entwürfen, habe ich nur mit der Distanz zwischen den Punkten gearbeitet. In weiteren Entwürfen
+      habe ich auch noch mit der Grösse der Punkte herum experimentiert. Ich habe nach der
+      Platzierung der Punkte jeweils versucht, eine Version mit noch mehr Kontrast zu machen.
       </p>
       `,
     },
@@ -50,7 +50,7 @@ const getProjects = () => {
         <p>Zuerst habe ich mich für eine Schriftart entschieden. Hier habe ich die Didot verwendet.
         <br>Danach suchte ich mir geeignete Zeichen aus.
         Diese habe ich danach in Pfade umgewandelt, damit ich sie beliebig skalieren kann.
-        <br>Nun musste ich die skalierten Zeichen nur noch so optimal platzieren, damit man die Figur nicht mehr
+        <br>Nun musste ich die Zeichen nur noch so platzieren, damit man die Figur nicht mehr
         vom Hintergrund unterscheiden kann.
         </p>
       `,
@@ -69,8 +69,9 @@ const getProjects = () => {
         Didot und Bodoni entschieden.</p>
 
         <h3>Vorgehensweise</h3>
-        <p>Zuerst haben wir in Adobe Illustrator stark unterschiedliche Zeichen und Buchstaben übereinander gelegt und diese danach in Adobe InDesign
-        mit ein Paar anderen Elementen gelayoutet.</p>
+        <p>Zuerst haben wir in Adobe Illustrator ein Paar stark unterschiedliche Zeichen und
+        Buchstaben übereinander gelegt, um diese danach in Adobe InDesign
+        in ein Layout einzubauen.</p>
       `,
     },
     {
@@ -98,13 +99,14 @@ const getProjects = () => {
       ],
       text: `
         <h3>Projektbeschrieb</h3>
-        <p>Bei diesem Projekt musste man versuchen, seine eigene Hand, dreidimensional abzuzeichnen.</p>
+        <p>Bei diesem Projekt musste man versuchen seine eigene Hand, dreidimensional abzuzeichnen.</p>
 
         <h3>Vorgehensweise</h3>
-        <p>Nach einem Input, konnten wir mit dem Zeichnen beginnen.<br>
-        In einem ersten Schritt, haben wir die Konturen der Hand nachgezeichnet.
-        Danach konnten wir eine Linie zeichnen, welche uns später bei der Schattierung geholfen hat.<br>
-        Schlussendlich ergab sich ein, so einigermassen als Hand erkennbarer, Sketch.
+        <p>Nach einem kurzen Input, konnten wir mit dem Zeichnen beginnen.<br>
+        In einem ersten Schritt haben wir die Konturen der Hand nachgezeichnet.
+        Danach konnten wir eine Linie zeichnen, welche uns in einem nächsten Schritt bei
+        der Schattierung geholfen hat.<br>
+        Schlussendlich ergab sich daraus ein als Hand erkennbarer Sketch.
         </p>
       `,
     },
@@ -119,10 +121,10 @@ const getProjects = () => {
 
         <h3>Vorgehensweise</h3>
         <p>Zuerst habe ich die Vordergrundsfarbe gewählt, die ich später auf den Hintergründen platzieren möchte. Danach habe ich das ganze so
-        auf einem Artboard platziert, dass ich zwei hälften mit unterschiedlicher Hintergrundsfarben habe. Auf diesen beiden Hälften
+        auf einem Artboard platziert, dass ich zwei Hälften mit unterschiedlichen Hintergrundsfarben habe. Auf diesen beiden Hälften
         habe ich dann jeweils die Vordergrundsfarbe als kleines Quadrat platziert. Nun musste ich nur noch mit den Hintergrundsfarben
-        rumprobieren, bis die Vordergrundsfarbe unterschiedlich aussieht.<br>
-        Auch für den zweiten Auftrag habe ich hier wieder die beiden hälften mit je einem farbigen Quadrat eingerichtet. Von hier aus musste ich nun einfach rumpröbeln,
+        herum probieren, bis die Vordergrundsfarben unterschiedlich wirkten.<br>
+        Auch für den zweiten Auftrag habe ich zwei Hälften mit je einem farbigen Quadrat erstellt. Von hier aus musste ich nun einfach herum pröbeln,
         bis die beiden Vordergrundsfarben gleich wirkten.</p>
       `,
     },
