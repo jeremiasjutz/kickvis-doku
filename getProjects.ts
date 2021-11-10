@@ -26,16 +26,16 @@ const getProjects = () => {
         'Komposition mit Kreisen Versuch'
       ),
       text: `
-      <h3>Projektbeschrieb</h3>
-      <p>Bei diesem Projekt musste man ein Begriffspaar wählen und dazu zwei Frames in einem bestimmten
-      Seitenverhältnis <small class="tabular-nums">[1:1 | 16:9 | 4:3]</small> mit Kreisen gestalten.<br>
-      Ich habe mich für das Begriffspaar <em>Nah und Fern</em> entschieden.</p>
+        <h3>Projektbeschrieb</h3>
+        <p>Bei diesem Projekt musste man ein Begriffspaar wählen und dazu zwei Frames in einem bestimmten
+        Seitenverhältnis <small class="tabular-nums">[1:1 | 16:9 | 4:3]</small> mit Kreisen gestalten.<br>
+        Ich habe mich für das Begriffspaar <em>Nah und Fern</em> entschieden.</p>
 
-      <h3>Vorgehensweise</h3>
-      <p>In den ersten Entwürfen, habe ich nur mit der Distanz zwischen den Punkten gearbeitet. In weiteren Entwürfen
-      habe ich auch noch mit der Grösse der Punkte herum experimentiert. Ich habe nach der
-      Platzierung der Punkte jeweils versucht, eine Version mit noch mehr Kontrast zu machen.
-      </p>
+        <h3>Vorgehensweise</h3>
+        <p>In den ersten Entwürfen, habe ich nur mit der Distanz zwischen den Punkten gearbeitet. In weiteren Entwürfen
+        habe ich auch noch mit der Grösse der Punkte herum experimentiert. Ich habe nach der
+        Platzierung der Punkte jeweils versucht, eine Version mit noch mehr Kontrast zu machen.
+        </p>
       `,
     },
     {
@@ -77,15 +77,15 @@ const getProjects = () => {
     {
       name: 'Notizen Input Wahrnehmung',
       text: `
-      <h3>Visuelle Wahrnehmung</h3>
-      <p>Der Mensch versucht immer etwas symmetrisches oder bekanntes zu sehen. So reagiert er zum Beispiel schneller auf ein Bild oder Objekt welches Gesichts ähnliche Formen enthält. Weiter braucht es Begrenzungen, um eine Form als solche zu erkennen. Im Beispiel mit dem “WIN” Schriftzug wird erst klar was da steht, wenn man links und rechts die Begrenzung sieht.
-      Die sechs wesentlichen Faktoren für die Zusammenhangsbildung in der Wahrnehmung zeigen auf, wie der Mensch oder besser gesagt das Gehirn versucht Sinn aus einer Abbildung zu machen. Dabei spielt Erfahrung eine extrem grosse Rolle.
-      Diese Erfahrung hilft uns dabei auch ganz vereinfachte Formen zu erkennen (zum Beispiel die Katze bei dem Punkt der “Formkonstanz”).
-      Die Raumillusion hilft uns die Tiefe eines Bildes zu verstehen. Dazu gehört die Perspektive, Schärfentiefe und Grösse der Objekte auf dem Bild.
-      Alle bildinformationen welche vom Auge erfasst werden, müssen im Gehirn verarbeitet werden. Das Visuelle Licht wird auf der Retina in Nervensignale umgewandelt, welche vom Gehirn interpretiert werden können.
-      Spannend wird es, wenn einem Bild Informationen weggenommen werden. Dabei versucht das Gehirn das Fehlende rein zu interpretieren. Im Beispiel mit den verkehrten Buchstaben, würde man zuerst gar nicht bemerken, dass der Text komplett falsch geschrieben ist.
-      Beim zweiten Beispiel mit der halbierten Text Zeile kann man auch noch ziemlich gut entziffern, was ursprünglich geschrieben wurde. Das geht aber nur gut, wenn man die Obere hälfte der Zeile hat. Auch funktioniert das Beispiel mit Serifen besser.
-      Damit ein Text lesbarer wird, muss die verwendete Schriftart ausbalanciert werden. Bei Serifenschriften ist es wichtig, eine grössere Laufweite zu verwenden als bei serifenlosen Schriften.</p>
+        <h3>Visuelle Wahrnehmung</h3>
+        <p>Der Mensch versucht immer etwas symmetrisches oder bekanntes zu sehen. So reagiert er zum Beispiel schneller auf ein Bild oder Objekt welches Gesichts ähnliche Formen enthält. Weiter braucht es Begrenzungen, um eine Form als solche zu erkennen. Im Beispiel mit dem “WIN” Schriftzug wird erst klar was da steht, wenn man links und rechts die Begrenzung sieht.
+        Die sechs wesentlichen Faktoren für die Zusammenhangsbildung in der Wahrnehmung zeigen auf, wie der Mensch oder besser gesagt das Gehirn versucht Sinn aus einer Abbildung zu machen. Dabei spielt Erfahrung eine extrem grosse Rolle.
+        Diese Erfahrung hilft uns dabei auch ganz vereinfachte Formen zu erkennen (zum Beispiel die Katze bei dem Punkt der “Formkonstanz”).
+        Die Raumillusion hilft uns die Tiefe eines Bildes zu verstehen. Dazu gehört die Perspektive, Schärfentiefe und Grösse der Objekte auf dem Bild.
+        Alle bildinformationen welche vom Auge erfasst werden, müssen im Gehirn verarbeitet werden. Das Visuelle Licht wird auf der Retina in Nervensignale umgewandelt, welche vom Gehirn interpretiert werden können.
+        Spannend wird es, wenn einem Bild Informationen weggenommen werden. Dabei versucht das Gehirn das Fehlende rein zu interpretieren. Im Beispiel mit den verkehrten Buchstaben, würde man zuerst gar nicht bemerken, dass der Text komplett falsch geschrieben ist.
+        Beim zweiten Beispiel mit der halbierten Text Zeile kann man auch noch ziemlich gut entziffern, was ursprünglich geschrieben wurde. Das geht aber nur gut, wenn man die Obere hälfte der Zeile hat. Auch funktioniert das Beispiel mit Serifen besser.
+        Damit ein Text lesbarer wird, muss die verwendete Schriftart ausbalanciert werden. Bei Serifenschriften ist es wichtig, eine grössere Laufweite zu verwenden als bei serifenlosen Schriften.</p>
 
       `,
     },
@@ -132,12 +132,12 @@ const getProjects = () => {
       name: 'Farbe (mood)',
       images: readDir('./public/images/farbe-mood', 'Farbe (mood) Versuch'),
       text: `
-      <h3>Projektbeschrieb</h3>
-      <p>Dieses Projekt ist ähnlich wie das «Farbenlehre» Projekt. Hier mussten wir aber vier Farben wählen und damit vier verschiedene Stimmungen kreieren.</p>
+        <h3>Projektbeschrieb</h3>
+        <p>Dieses Projekt ist ähnlich wie das «Farbenlehre» Projekt. Hier mussten wir aber vier Farben wählen und damit vier verschiedene Stimmungen kreieren.</p>
 
-      <h3>Vorgehensweise</h3>
-      <p>Zuerst habe ich ein Layout mit vier Rechtecken gemacht und diese dann eingefärbt. Danach habe ich drei Kopien davon gemacht und die Farben gewechselt,
-      damit eine neue Stimmung entsteht. Für weitere entwürfe habe ich dasselbe gemacht, einfach das Layout zu beginn angepasst.</p>
+        <h3>Vorgehensweise</h3>
+        <p>Zuerst habe ich ein Layout mit vier Rechtecken gemacht und diese dann eingefärbt. Danach habe ich drei Kopien davon gemacht und die Farben gewechselt,
+        damit eine neue Stimmung entsteht. Für weitere entwürfe habe ich dasselbe gemacht, einfach das Layout zu beginn angepasst.</p>
       `,
     },
     {
@@ -148,8 +148,8 @@ const getProjects = () => {
       ),
       cols: 'md:grid-cols-2',
       text: `
-      <h3>Projektbeschrieb</h3>
-      <p>Wir mussten in zweier Gruppen eines von verschiedenen Grundlage Büchern vorstellen. Unser Buch war «Methodik der Form- und Bildgestaltung» von Armin Hofmann</p>
+        <h3>Projektbeschrieb</h3>
+        <p>Wir mussten in zweier Gruppen eines von verschiedenen Grundlage Büchern vorstellen. Unser Buch war «Methodik der Form- und Bildgestaltung» von Armin Hofmann</p>
       `,
     },
     {
@@ -160,13 +160,16 @@ const getProjects = () => {
       ),
       cols: 'md:grid-cols-3',
       text: `
-      <h3>Projektbeschrieb</h3>
-      <p>In diesem Projekt ging es darum, ein Plakat zu gestalten, worauf sein Name erkennbar sein soll. Dabei durfte man die Anordnung der Buchstaben nicht in Leserichtung
-      machen, sondern musste die Hierarchie auf eine andere Art erreichen.</p>
+        <h3>Projektbeschrieb</h3>
+        <p>In diesem Projekt ging es darum ein Plakat zu gestalten, worauf sein Name erkennbar sein soll.
+        Dabei durfte man die Buchstaben nicht in Leserichtung platzieren, sondern musste die Hierarchie
+        auf eine andere Art erreichen.</p>
 
-      <h3>Vorgehensweise</h3>
-      <p>In meinen ersten Versuchen, habe ich versucht mit der Grösse der einzelnen Buchstaben die Hierarchie herzustellen. Das ist mir aber nicht so gut gelungen.
-      In weiteren Versuchen habe ich die Hierarchie mit Farbe und Position der Buchstaben versucht hinzubringen. Das hat in meinen Augen wesentlich besser Funktioniert.</p>
+        <h3>Vorgehensweise</h3>
+        <p>In meinen ersten Versuchen habe ich versucht, mit der Grösse der einzelnen Buchstaben die Hierarchie herzustellen.
+        Das ist mir aber nicht so gut gelungen. In weiteren Versuchen habe ich die Hierarchie mit
+        Farbe und Position der Buchstaben versucht hinzubringen. Das hat in meinen Augen wesentlich
+        besser Funktioniert.</p>
       `,
     },
     {
@@ -181,8 +184,9 @@ const getProjects = () => {
         <p>Bei diesem Projekt ging es darum, einen Raum mit korrekter Perspektive abzuzeichnen.</p>
 
         <h3>Vorgehensweise</h3>
-        <p>Nach einem kurzen Input konnten wir beginnen den Raum mit einem Bleistift optisch zu vermessen. Mithilfe dieser Masse,
-        konnte man nun ein Abbild des Raumes zeichen, welches korrekte Proportionen hat, und die Perspektive stimmt.</p>
+        <p>Nach einem kurzen Input konnten wir beginnen den Raum mit einem Bleistift optisch zu vermessen.
+        Mithilfe dieser Masse, konnte man nun ein Abbild des Raumes zeichen,
+        welches korrekte Proportionen hat und die Perspektive stimmt.</p>
         `,
     },
     {
@@ -750,7 +754,7 @@ const getProjects = () => {
       cols: 'md:grid-cols-2',
       text: `
         <h3>Projektbeschrieb</h3>
-        <p>Nach unserem Ausflug an die Weltformat Ausstellung, mussten wir zwei der dort ausgestellten Plakate auswählen und vergleichen</p>
+        <p>Nach unserem Ausflug an die Weltformat Ausstellung, mussten wir zwei der dort ausgestellten Plakate auswählen und vergleichen.</p>
 
         <h3>Vorgehensweise</h3>
         <p>Wir konnten nach vorgegebenen Kriterien die Plakate vergleichen.</p>
@@ -765,13 +769,14 @@ const getProjects = () => {
         },
       ],
       text: `
-      <h3>Projektbeschrieb</h3>
-      <p>Bei diesem Projekt mussten wir den Kopf eines Mitschülers abzeichnen.</p>
+        <h3>Projektbeschrieb</h3>
+        <p>Bei diesem Projekt mussten wir den Kopf einer Person abzeichnen.</p>
 
-      <h3>Vorgehensweise</h3>
-      <p>Zuerst habe ich die Konturen ungefähr gezeichnet und danach die Augenhöhlen und die Augen hinzugefügt. Von da aus konnte ich
-      nun das Nasenbein und die Nase zeichnen. Danach kam der Mund hin. Schlussendlich habe ich noch die Haare ergänzt.
-      </p>
+        <h3>Vorgehensweise</h3>
+        <p>Zuerst habe ich die Konturen ungefähr gezeichnet. Danach die Augenhöhlen und die Augen.
+        Von da aus konnte ich das Nasenbein und die Nase zeichnen. Danach kam der Mund hin.
+        Schlussendlich habe ich noch die Haare ergänzt.
+        </p>
     `,
     },
     {
@@ -779,28 +784,34 @@ const getProjects = () => {
       images: readDir('./public/images/match-cut', 'Match cut Versuch'),
       cols: 'md:grid-cols-2',
       text: `
-      <h3>Projektbeschrieb</h3>
-      <p>In diesem Projekt, mussten wir verschiedene Bildelemente aus Zeitschriften so kombinieren, dass ein neues Bild daraus entsteht.<br>
-      In einem zweiten Schritt ging es darum, zwei Bildelemente mit Weissraum zu kombinieren, damit der Betrachter das leere reininterpretieren muss.</p>
+        <h3>Projektbeschrieb</h3>
+        <p>In diesem Projekt, mussten wir verschiedene Bildelemente aus Zeitschriften so kombinieren,
+        dass ein neues Bild daraus entsteht.<br>
+        In einem zweiten Schritt ging es darum, zwei Bildelemente mit Weissraum zu kombinieren,
+        damit der Betrachter das leere reininterpretieren muss.</p>
 
-      <h3>Vorgehensweise</h3>
-      <p>Zuerst suchte ich mir in verschiedenen Zeitschriften Bildelemente heraus, welche mit anderen Bildelementen kombiniert werden können.
-      Danach habe ich auf viele verschiedene Arten versucht die Elemente zu kombinieren.<br>
-      Beim zweiten Auftrag mit dem Weissraum, fiel mir das ganze etwas schwerer. Ich suchte zuerst lange nach passenden Bildelementen, bis ich schlussendlich
-      etwas gefunden habe, was so halb passt.</p>
+        <h3>Vorgehensweise</h3>
+        <p>Zuerst suchte ich mir in verschiedenen Zeitschriften Bildelemente heraus, welche mit
+        anderen Bildelementen kombiniert werden können. Danach habe ich auf viele verschiedene Arten
+        versucht die Elemente zu kombinieren.<br>
+        Beim zweiten Auftrag mit dem Weissraum, fiel mir das ganze etwas schwerer. Ich suchte zuerst
+        lange nach passenden Bildelementen, bis ich schlussendlich, mit dem Zug und der Tüte gebrannter
+        Mandeln, etwas gefunden habe, was so halb passt.</p>
     `,
     },
     {
       name: 'Notizen Input Entwurfsprozesse',
       text: `
-      <p>Ein Entwurf kann sehr früh beginnen. Es reicht bereits ein gekritzel auf einer Serviette. Daraus kann dann
-      etwas weiteres entstehen. Um etwas zu entwerfen, lohnt es sich Recherche zu betreiben (wie am Beispiel des Zündholzes).
-      Manchmal muss man auch einfach drauf los probieren indem man zum Beispiel ein Subjekt mehrmals mit unterschiedlichen Hintergründen
-      darstellt. Oder wie am Beispiel von Christoph Niemann: Einfach machen!<br>
-      Man kann auch verschiedene Bildelemente auf unterschiedliche Art und Weise kombinieren, bis man zum gewünschten Entwurf kommt.<br>
-      Wenn man eine Idee hat, lohnt es sich auch, diese zu transformiere. Dazu gibt es eine hilfreiche Checkliste. Die daraus neu gewonnenen
-      Ideen können den Entwurf in die richtige Richtung leiten.
-      </p>
+        <p>Ein Entwurf kann sehr früh beginnen. Es reicht bereits ein gekritzel auf einer Serviette. Daraus kann dann
+        etwas weiteres entstehen.<br>
+        Um etwas zu entwerfen, lohnt es sich Recherche zu betreiben (wie am Beispiel des Zündholzes).
+        Manchmal muss man auch einfach drauf los probieren, indem man zum Beispiel ein Subjekt mehrmals
+        mit unterschiedlichen Hintergründen darstellt. Oder wie am Beispiel von Christoph Niemann: Einfach machen!<br>
+        Man kann auch verschiedene Bildelemente auf unterschiedliche Art und Weise kombinieren,
+        bis man zum gewünschten Entwurf kommt.<br>
+        Wenn man eine Idee hat lohnt es sich auch diese zu transformieren. Dazu gibt es eine hilfreiche
+        Checkliste. Die daraus neu gewonnenen Ideen können den Entwurf in die richtige Richtung leiten.
+        </p>
     `,
     },
     {
@@ -811,10 +822,12 @@ const getProjects = () => {
       ),
       text: `
         <h3>Projektbeschrieb</h3>
-        <p>Bei diesem Projekt, mussten wir ein bereits bestehendes Bild in viele kleine Bilder aufteilen, und in einem vorgegebenen Raster platzieren.</p>
+        <p>Bei diesem Projekt mussten wir ein bereits bestehendes Bild in viele kleine Bilder aufteilen
+        und in einem vorgegebenen Raster platzieren.</p>
 
         <h3>Vorgehensweise</h3>
-        <p>Hier habe ich einfach mal drauf los probiert. Manchmal sah die Anordnung gut aus, manchmal weniger. Das schwierigste an der Übung war, den Weissraum passend
+        <p>Hier habe ich einfach mal drauf los probiert. Manchmal sah die Anordnung gut aus,
+        manchmal weniger. Das schwierigste an der Übung war, den Weissraum passend
         einzusetzen.</p>
       `,
     },
@@ -827,7 +840,8 @@ const getProjects = () => {
       cols: 'md:grid-cols-2',
       text: `
         <h3>Projektbeschrieb</h3>
-        <p>Wie beim Grundlagen Buch Vortrag, mussten wir auch hier in zweier Teams zwei Corporate Designs vergleichen. Unser Vortrag hat die zwei CDs von Airbnb und Booking.com verglichen.</p>
+        <p>Wie beim Grundlagen Buch Vortrag, mussten wir auch hier in zweier Teams zwei Corporate
+        Designs vergleichen. Unser Vortrag hat die zwei CDs von Airbnb und Booking.com verglichen.</p>
       `,
     },
     {
@@ -835,12 +849,13 @@ const getProjects = () => {
       images: readDir('./public/images/bildwelten-arbeit', 'Bildwelten Arbeit'),
       cols: 'md:grid-cols-2',
       text: `
-      <h3>Projektbeschrieb</h3>
-      <p>Basierend auf den CD Vergleich Vorträgen, haben wir uns in diesem Projekt mit Bildwelten beschäftigt.</p>
+        <h3>Projektbeschrieb</h3>
+        <p>Basierend auf den CD Vergleich Vorträgen, haben wir uns in diesem Projekt mit Bildwelten beschäftigt.</p>
 
-      <h3>Vorgehensweise</h3>
-      <p>Wir haben viele Bilder von arbeitenden Personen gesucht und am Boden ausgelegt. Danach konnten wir die Bilder nach vielen verschiedenen Kriterien sortieren
-      und überlegen, ob einige vielleicht passend für das CD einiger Firmen wären.</p>
+        <h3>Vorgehensweise</h3>
+        <p>Wir haben viele Bilder von arbeitenden Personen gesucht und am Boden ausgelegt.
+        Danach konnten wir die Bilder nach vielen verschiedenen Kriterien sortieren
+        und überlegen, ob einige vielleicht passend für das CD einiger Firmen wären.</p>
     `,
     },
     {
@@ -849,11 +864,13 @@ const getProjects = () => {
       cols: 'md:grid-cols-2',
       text: `
         <h3>Projektbeschrieb</h3>
-        <p>Bei diesem Projekt stand eine Person der Klasse in der Mitte eines Kreises. Die anderen mussten versuchen die Person möglichst genau abzuzeichnen.</p>
+        <p>Bei diesem Projekt stand eine Person der Klasse in der Mitte eines Kreises.
+        Die anderen mussten versuchen die Person möglichst genau abzuzeichnen.</p>
 
         <h3>Vorgehensweise</h3>
         <p>Zuerst habe ich die dominanten Linien und die Proportionen gezeichnet. Danach konnte man
-        Details hinzufügen. In einem weiteren Schritt haben wir die Zeichnung mit einer Zeitlimite von 90 Sekunden gemacht.
+        Details hinzufügen. In einem weiteren Schritt haben wir die Zeichnung mit einer Zeitlimite
+        von 90 Sekunden gemacht.
         </p>
       `,
     },
@@ -865,33 +882,37 @@ const getProjects = () => {
       ),
       cols: 'md:grid-cols-2',
       text: `
-      <h3>Projektbeschrieb</h3>
-      <p>Hier mussten wir unsere Küche aus dem Gedächtnis zeichnen. Dies mussten wir drei Mal auf drei verschiedene Arten machen.</p>
+        <h3>Projektbeschrieb</h3>
+        <p>Hier mussten wir unsere Küche aus dem Gedächtnis zeichnen. Dies mussten wir drei Mal auf
+        drei verschiedene Arten machen.</p>
 
-      <h3>Vorgehensweise</h3>
-      <p>In der ersten Variante war uns frei gestellt, wie wir die Küche zeichnen wollten. Einzig das Format war vorgegeben.
-      Es musste nämlich innerhalb der Form eines Smarphones gezeichnet werden.<br>
-      In der zweiten Variante war die Vorgabe, dass wir die Küche aus dem Blickwinkel eines Insektes irgendwo in der Küche zeichen mussten.<br>
-      In der letzten Variante mussten wir unsere Traumküche oder Küche der Zukunft zeichnen.
-      </p>
+        <h3>Vorgehensweise</h3>
+        <p>In der ersten Variante war uns frei gestellt, wie wir die Küche zeichnen wollten.
+        Einzig das Format war vorgegeben. Es musste nämlich innerhalb der Form eines Smarphones
+        gezeichnet werden.<br>
+        In der zweiten Variante war die Vorgabe, dass wir die Küche aus dem Blickwinkel eines Insektes
+        irgendwo in der Küche zeichen mussten.<br>
+        In der letzten Variante mussten wir unsere Traumküche oder Küche der Zukunft zeichnen.
+        </p>
     `,
     },
     {
       name: 'Notizen Mikrotypo',
       text: `
-      <h3>Mikrotypografie</h3>
-      <p>Die Mikrotypografie setzt sich mit den einzelnen Zeichen der Typografie auseinander. Dazu gehören folgende Zeichen:
-      <ul>
-        <li>Anführungszeichen</li>
-        <li>Mathematische Zeichen</li>
-        <li>At-Zeichen</li>
-        <li>Prozent-/Promillezeichen</li>
-        <li>Versalien im Satz</li>
-        <li>Satzzeichen</li>
-        <li>Horizontale Striche</li>
-        <li>Zahlen</li>
-      </ul>
-      </p>
+        <h3>Mikrotypografie</h3>
+        <p>Die Mikrotypografie setzt sich mit den einzelnen Zeichen der Typografie auseinander.
+        Dazu gehören folgende Zeichen:
+          <ul>
+            <li>Anführungszeichen</li>
+            <li>Mathematische Zeichen</li>
+            <li>At-Zeichen</li>
+            <li>Prozent-/Promillezeichen</li>
+            <li>Versalien im Satz</li>
+            <li>Satzzeichen</li>
+            <li>Horizontale Striche</li>
+            <li>Zahlen</li>
+          </ul>
+        </p>
       `,
     },
     {
@@ -903,10 +924,13 @@ const getProjects = () => {
         },
       ],
       text: `
-      <h3>Besprechung mit David</h3>
-      <p>Nachdem ich ein paar erste Entwürfe meines Plakates fertig hatte, ging ich zu David, um mit ihm das weitere Vorgehen zu besprechen.<br>
-      Er hat mir gezeigt, welche Entwürfe in eine gute Richtung gehen, und was ich noch verbessern muss. Bei einem der Plakatentwürfe, fand er das Layout recht gut, jedoch fehlt in der Mitte etwas.
-      Zudem ist das Zitat zu lange und den Schriftzug «Studio» ganz oben kann man nicht perfekt lesen. Mit diesen Inputs konnte ich nochmals dahinter und habe die angesprochenen Punkte versucht zu verbessern. Im Bild unten sieht man, was genau verbessert wurde.</p>
+        <h3>Besprechung mit David</h3>
+        <p>Nachdem ich ein paar erste Entwürfe meines Plakates fertig hatte, ging ich zu David,
+        um mit ihm das weitere Vorgehen zu besprechen.<br>
+        Er hat mir gezeigt welche Entwürfe in eine gute Richtung gehen und was ich noch verbessern muss.
+        Bei einem der Plakatentwürfe, fand er das Layout recht gut, jedoch fehlt in der Mitte etwas.
+        Zudem ist das Zitat zu lange und den Schriftzug «Studio» ganz oben kann man nicht gut lesen.
+        Mit diesen Inputs konnte ich nochmals dahinter und habe versucht, die angesprochenen Punkte zu verbessern.</p>
       `,
     },
     {
@@ -917,12 +941,15 @@ const getProjects = () => {
       ),
       cols: 'md:grid-cols-2',
       text: `
-      <h3>Adobe Fresco</h3>
-      <p>Für die Sketches habe ich oft Adobe Fresco verwendet, welches ich zuvor noch nicht kannte.
-      Dieses Programm wurde spezifisch für Tablets wie das iPad entwickelt, und vermittelt ein sehr echtes Schreib-/Zeichnungsgefühl.
-      In den Bildern sieht man das Programm und wie ich darin meine Zeichnungen habe.<br><br>
-      Leider bin ich nicht mehr dazu gekommen, weitere Programme wie After Effects oder ein anderes Adobe Programm, das ich noch nicht kenne, auszuprobieren.
-      Ich konnte jedoch mein Wissen in den Programmen Adobe Photoshop, Adobe Illustrator, Adobe InDesign und Adobe Xd wieder mal auffrischen, was sicher gut war.</p>`,
+        <h3>Adobe Fresco</h3>
+        <p>Für die Sketches habe ich Adobe Fresco verwendet, welches ich zuvor noch nicht kannte.
+        Dieses Programm wurde spezifisch für Tablets wie das iPad entwickelt, und vermittelt ein
+        sehr echtes Schreib-/Zeichnungsgefühl.
+        In den Bildern sieht man das Programm und wie ich darin meine Zeichnungen habe.<br><br>
+        Leider bin ich nicht mehr dazu gekommen, weitere Programme wie After Effects oder ein anderes
+        Adobe Programm, das ich noch nicht kenne, auszuprobieren.
+        Ich konnte jedoch mein Wissen in den Programmen Adobe Photoshop, Adobe Illustrator, Adobe InDesign
+        und Adobe Xd wieder mal auffrischen, was sicher gut war.</p>`,
     },
   ];
 
