@@ -33,7 +33,8 @@ const Home = ({
 
   const move = useCallback((e: MouseEvent) => {
     if (imageRef.current && scrollContainerRef.current) {
-      imageRef.current.style.top = e.pageY + 'px';
+      imageRef.current.style.top =
+        e.pageY + scrollContainerRef.current.scrollTop + 'px';
       imageRef.current.style.left = e.pageX + 'px';
     }
   }, []);
@@ -108,7 +109,7 @@ const Home = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             src={src}
-            className="fixed max-w-lg -translate-x-1/2 -translate-y-1/2 bg-white border border-black pointer-events-none left-1/2 top-1/2 dark:bg-black dark:border-white max-h-96 mix-blend-difference invert dark:invert-0"
+            className="absolute max-w-lg -translate-x-1/2 -translate-y-1/2 bg-white border border-black pointer-events-none left-1/2 top-1/2 dark:bg-black dark:border-white max-h-96 mix-blend-difference invert dark:invert-0"
           />
         ) : null}
       </AnimatePresence>
