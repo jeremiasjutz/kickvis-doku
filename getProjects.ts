@@ -944,7 +944,7 @@ const getProjects = () => {
         <h3>Adobe Fresco</h3>
         <p>Für die Sketches habe ich Adobe Fresco verwendet, welches ich zuvor noch nicht kannte.
         Dieses Programm wurde spezifisch für Tablets wie das iPad entwickelt, und vermittelt ein
-        sehr echtes Schreib-/Zeichnungsgefühl.
+        sehr echtes Schreib- / Zeichnungsgefühl.
         In den Bildern sieht man das Programm und wie ich darin meine Zeichnungen habe.<br><br>
         Leider bin ich nicht mehr dazu gekommen, weitere Programme wie After Effects oder ein anderes
         Adobe Programm, das ich noch nicht kenne, auszuprobieren.
