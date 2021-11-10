@@ -145,7 +145,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                               });
                               setIsMenuOpen(false);
                             }}
-                            className="p-6 text-2xl transition-colors duration-700 origin-left md:px-12 hyphens md:text-3xl md:hover:text-indigo-500"
+                            className="p-6 text-2xl transition-colors duration-700 origin-left md:px-12 md:text-3xl md:hover:text-indigo-500"
                           >
                             {name}
                           </motion.a>
