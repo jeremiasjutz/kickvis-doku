@@ -187,7 +187,7 @@ const getProjects = () => {
       name: 'Notizen Vorträge VisDes',
       text: `
       <div>
-      <details class="-mt-6 pb-6">
+      <details class="-mt-6 pb-6 pt-6 md:pt-0">
         <summary class="focus:outline-none cursor-pointer">
           <h3 class="inline ml-6">Josef Müller Brockmann (Nicola)</h3>
         </summary>
@@ -655,7 +655,7 @@ const getProjects = () => {
         </ul>
       </details>
       <div class="absolute inset-x-0 border-b border-black dark:border-white"></div>
-      <details class="-mb-6 pt-6">
+      <details class="-mb-6 pt-6 pb-6 md:pb-0">
         <summary class="focus:outline-none cursor-pointer">
           <h3 class="inline ml-6">April Greiman (Nicole)
         </summary>
