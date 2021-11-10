@@ -92,7 +92,7 @@ const Home = ({
                       scrollContainerRef.current?.scrollTop ?? 0
                     );
                   }}
-                  className="relative block p-12 my-[0.3px] text-4xl transition-all w-[fit-content] duration-700 origin-left cursor-pointer md:text-5xl hover:font-bold"
+                  className="relative block p-12 my-[0.3px] text-3xl sm:text-4xl transition-all w-[fit-content] duration-700 origin-left cursor-pointer md:text-5xl hover:font-bold"
                 >
                   {project.name}
                 </motion.a>
