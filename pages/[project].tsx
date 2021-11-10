@@ -67,7 +67,7 @@ const Project = ({
           >
             <Link href="/">
               <a className="mr-3 text-3xl md:mr-6 sm:text-4xl group">
-                <RiArrowLeftLine className="transition-transform dark:text-white group-hover:-translate-x-2" />
+                <RiArrowLeftLine className="transition-transform dark:text-white md:group-hover:-translate-x-2" />
               </a>
             </Link>
             <h1 className="text-3xl sm:text-4xl md:text-5xl dark:text-white">

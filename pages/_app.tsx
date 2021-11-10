@@ -97,7 +97,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="grid flex-1 w-12 place-items-center group cursor pointer"
             >
-              <div className="flex justify-center text-lg transition-all duration-700 -rotate-90 rounded w-11 group-hover:font-semibold">
+              <div className="flex justify-center text-lg transition-all duration-700 -rotate-90 rounded w-11 md:group-hover:font-semibold">
                 {isMenuOpen ? 'schliessen' : 'menu'}
               </div>
             </button>
@@ -145,7 +145,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                               });
                               setIsMenuOpen(false);
                             }}
-                            className="p-6 text-2xl transition-colors duration-700 origin-left md:px-12 hyphens md:text-3xl hover:text-indigo-500"
+                            className="p-6 text-2xl transition-colors duration-700 origin-left md:px-12 hyphens md:text-3xl md:hover:text-indigo-500"
                           >
                             {name}
                           </motion.a>

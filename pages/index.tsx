@@ -88,7 +88,7 @@ const Home = ({
                 onClick={() => {
                   setScrollPersist(scrollContainerRef.current?.scrollTop ?? 0);
                 }}
-                className="block p-8 md:p-12 text-3xl sm:text-4xl transition-all w-[fit-content] duration-700 origin-left cursor-pointer md:text-5xl hover:font-bold"
+                className="block p-8 md:p-12 text-3xl sm:text-4xl transition-all w-[fit-content] duration-700 origin-left cursor-pointer md:text-5xl md:hover:font-bold"
               >
                 {project.name}
               </motion.a>
