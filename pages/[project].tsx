@@ -1,15 +1,15 @@
-import Link from 'next/link';
-import Head from 'next/head';
-import { RefObject, useEffect, useMemo, useState } from 'react';
-import { SRLWrapper } from 'simple-react-lightbox';
-import { RiArrowLeftLine } from 'react-icons/ri';
-import { motion, Variants } from 'framer-motion';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import Link from "next/link";
+import Head from "next/head";
+import { RefObject, useEffect, useMemo, useState } from "react";
+import { SRLWrapper } from "simple-react-lightbox";
+import { RiArrowLeftLine } from "react-icons/ri";
+import { motion, Variants } from "framer-motion";
+import { GetStaticPaths, GetStaticProps } from "next";
 
-import projects from '../projects';
-import { nameToSlug } from '../utils';
-import Block from '../components/Block';
-import { Project } from '../getProjects';
+import projects from "../projects";
+import { nameToSlug } from "../utils";
+import Block from "../components/Block";
+import { Project } from "../getProjects";
 
 const Project = ({
   project,
@@ -45,7 +45,7 @@ const Project = ({
   };
 
   const transition = {
-    type: 'spring',
+    type: "spring",
     duration: 1,
   };
 
@@ -65,10 +65,8 @@ const Project = ({
             transition={transition}
             className="flex items-center p-6 md:p-12"
           >
-            <Link href="/">
-              <a className="mr-3 text-3xl md:mr-6 sm:text-4xl group">
-                <RiArrowLeftLine className="transition-transform dark:text-white md:group-hover:-translate-x-2" />
-              </a>
+            <Link href="/" className="mr-3 text-3xl md:mr-6 sm:text-4xl group">
+              <RiArrowLeftLine className="transition-transform dark:text-white md:group-hover:-translate-x-2" />
             </Link>
             <h1 className="text-3xl sm:text-4xl md:text-5xl dark:text-white">
               {project.name}

@@ -1,26 +1,26 @@
-import '../styles/tailwind.css';
+import "../styles/tailwind.css";
 
-import Link from 'next/link';
-import SimpleReactLightbox from 'simple-react-lightbox';
-import { useRouter } from 'next/router';
-import { RiHomeLine } from 'react-icons/ri';
-import { ThemeProvider } from 'next-themes';
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion, Transition, Variants } from 'framer-motion';
+import Link from "next/link";
+import SimpleReactLightbox from "simple-react-lightbox";
+import { useRouter } from "next/router";
+import { RiHomeLine } from "react-icons/ri";
+import { ThemeProvider } from "next-themes";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, Transition, Variants } from "framer-motion";
 
-import type { AppProps } from 'next/app';
+import type { AppProps } from "next/app";
 
-import projects from '../projects';
-import DarkModeSwitcher from '../components/DarkModeSwitcher';
-import { nameToSlug } from '../utils';
-import { Project } from '../getProjects';
+import projects from "../projects";
+import DarkModeSwitcher from "../components/DarkModeSwitcher";
+import { nameToSlug } from "../utils";
+import { Project } from "../getProjects";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [scrollPersist, setScrollPersist] = useState(0);
   const { asPath } = useRouter();
 
   const transition: Transition = {
-    type: 'tween',
+    type: "tween",
     duration: 0.7,
     delayChildren: 0.1,
     staggerChildren: 0.025,
@@ -38,12 +38,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     hidden: {
       opacity: 0,
       x: -50,
-      transition: { type: 'spring', duration: 0.7 },
+      transition: { type: "spring", duration: 0.7 },
     },
     show: {
       opacity: 1,
       x: 0,
-      transition: { type: 'spring', duration: 0.7 },
+      transition: { type: "spring", duration: 0.7 },
     },
   };
 
@@ -85,20 +85,19 @@ function MyApp({ Component, pageProps }: AppProps) {
       <SimpleReactLightbox>
         <div className="absolute inset-0 md:ring-1 ring-black dark:ring-white md:inset-6">
           <nav className="absolute inset-y-0 flex flex-col w-12 border-r border-black dark:border-white">
-            <Link href="/" passHref>
-              <a
-                className="grid w-full h-12 border-b border-black cursor-pointer dark:border-white place-items-center"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <RiHomeLine />
-              </a>
+            <Link
+              href="/"
+              className="grid w-full h-12 border-b border-black cursor-pointer dark:border-white place-items-center"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <RiHomeLine />
             </Link>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="grid flex-1 w-12 place-items-center group cursor pointer"
             >
               <div className="flex justify-center text-lg transition-all duration-700 -rotate-90 rounded w-11 md:group-hover:font-semibold">
-                {isMenuOpen ? 'schliessen' : 'menu'}
+                {isMenuOpen ? "schliessen" : "menu"}
               </div>
             </button>
             <DarkModeSwitcher />
@@ -118,38 +117,41 @@ function MyApp({ Component, pageProps }: AppProps) {
                         key={name}
                         className={`border-black dark:border-white flex items-center ${
                           i === projects.length - 2 || i === projects.length - 3
-                            ? 'lg:border-b-0'
-                            : ''
-                        } ${i === projects.length - 2 ? 'md:border-b-0' : ''} ${
+                            ? "lg:border-b-0"
+                            : ""
+                        } ${i === projects.length - 2 ? "md:border-b-0" : ""} ${
                           i === projects.length - 1
-                            ? 'lg:translate-x-0'
-                            : 'border-b'
-                        } ${i % 2 === 0 ? '' : 'md:border-l lg:border-l-0'} ${
-                          i % 3 === 2 ? '' : 'lg:border-r'
+                            ? "lg:translate-x-0"
+                            : "border-b"
+                        } ${i % 2 === 0 ? "" : "md:border-l lg:border-l-0"} ${
+                          i % 3 === 2 ? "" : "lg:border-r"
                         } ${
                           i === projects.length - 1
-                            ? 'lg:translate-x-[1px]'
-                            : ''
+                            ? "lg:translate-x-[1px]"
+                            : ""
                         } ${
                           asPath === `/${nameToSlug(name)}`
-                            ? 'bg-black dark:bg-white text-white dark:text-black'
-                            : ''
+                            ? "bg-black dark:bg-white text-white dark:text-black"
+                            : ""
                         }`}
                       >
-                        <Link href={nameToSlug(name)} passHref>
-                          <motion.a
-                            variants={item}
-                            onClick={() => {
-                              scrollContainerRef.current?.scrollTo({
-                                top: 0,
-                              });
-                              setIsMenuOpen(false);
-                            }}
-                            className="p-6 text-2xl transition-colors duration-700 origin-left md:px-12 md:text-3xl md:hover:text-indigo-500"
+                        <motion.div
+                          variants={item}
+                          onClick={() => {
+                            scrollContainerRef.current?.scrollTo({
+                              top: 0,
+                            });
+                            setIsMenuOpen(false);
+                          }}
+                          className="p-6 origin-left md:px-12"
+                        >
+                          <Link
+                            href={nameToSlug(name)}
+                            className="text-2xl transition-colors duration-700 md:text-3xl md:hover:text-indigo-500"
                           >
                             {name}
-                          </motion.a>
-                        </Link>
+                          </Link>
+                        </motion.div>
                       </div>
                     );
                   })}
@@ -161,7 +163,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             ref={scrollContainerRef}
             className="absolute inset-y-0 right-0 overflow-x-hidden overflow-y-auto left-12"
           >
-            <AnimatePresence exitBeforeEnter>
+            <AnimatePresence mode="wait">
               {isLoading ? (
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -177,7 +179,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
                       <div className="relative w-full bg-white">
                         <p className="z-10 px-6 py-3 text-sm font-medium text-black ">
-                          Inhalte laden{' '}
+                          Inhalte laden{" "}
                           <span className="tabular-nums">
                             {Math.round(progress * 100)}%
                           </span>
